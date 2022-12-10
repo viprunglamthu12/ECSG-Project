@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce CSGo</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+        integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="icon/themify-icons/themify-icons.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <!-- nav bar -->
+    <section id="nav-bar">
+        <nav id="nav" class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><strong>E-commerce CSGo</strong></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Home</a></li>
+                        <li class="active"><a href="#">Market</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#"><img src="images/steam-logo.png" alt="Steam Symbol"
+                                    style="width:20px;height:20px;"> Sign Up/Log in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Market -->
+    <section id="market">
+         <!-- market filter -->
+         <button id="filter-btn" onclick="filterButton()"><i class="ti-menu-alt"></i> Filters</button>
+         <div class="filter col-md-3" id="filter">
+             <h3 class="filter-title"> <i class="ti-shopping-cart"></i> Marketplace</h3>
+             <div class="filter-title-row">
+                 <p><i class="ti-menu-alt"></i> Filters</p>
+                 <a href="#" class="reset"><i class="ti-reload"></i> Reset</a>
+             </div>
+             <div class="filter-content">
+                 <form action="" method="get">
+                     <div class="price">
+                         <h4 class="filter-subtitle">Price <i class="ti-money"></i></h4>
+                         <div class="filter-range">
+                             <div class="range_container">
+                                 <div class="sliders_control">
+                                     <input id="priceFromSlider" type="range" value="0" min="0" max="21999" />
+                                     <input id="priceToSlider" type="range" value="21999" min="0" max="21999" />
+                                 </div>
+                                 <div class="form_control">
+                                     <div class="form_control_container">
+                                         <div class="form_control_container__time">Min</div>
+                                         <input class="form_control_container__time__input" type="number"
+                                             id="priceFromInput" value="0" min="0" max="21999" />
+                                     </div>
+                                     <div class="form_control_container">
+                                         <div class="form_control_container__time">Max</div>
+                                         <input class="form_control_container__time__input" type="number"
+                                             id="priceToInput" value="21999" min="0" max="21999" />
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     <h4 class="filter-subtitle">Exterior <i class="ti-star"></i></h4>
+                     <input type="checkbox" name="Exterior" value="Factory New">
+                     <label for="Factory New">Factory New</label><br>
+                     <input type="checkbox" name="Exterior" value="MinimalWear">
+                     <label for="MinimalWear">Minimal Wear</label><br>
+                     <input type="checkbox" name="Exterior" value="Field-Tested">
+                     <label for="Field-Tested">Field-Tested</label><br>
+                     <input type="checkbox" name="Exterior" value="Well-Worn">
+                     <label for="Well-Worn">Well-Worn</label><br>
+                     <input type="checkbox" name="Exterior" value="Battle-Scarred">
+                     <label for="Battle-Scarred">Battle-Scarred</label><br>
+ 
+                     <h4 class="filter-subtitle">Float</i></h4>
+                     <div class="filter-range">
+                         <div class="range_container">
+                             <div class="sliders_control">
+                                 <input id="floatFromSlider" type="range" value="0" min="0" max="1" step="0.00001" />
+                                 <input id="floatToSlider" type="range" value="1" min="0" max="1" step="0.00001" />
+                             </div>
+                             <div class="form_control">
+                                 <div class="form_control_container">
+                                     <div class="form_control_container__time">Min</div>
+                                     <input class="form_control_container__time__input" type="number" id="floatFromInput"
+                                         value="0" min="0" max="1" />
+                                 </div>
+                                 <div class="form_control_container">
+                                     <div class="form_control_container__time">Max</div>
+                                     <input class="form_control_container__time__input" type="number" id="floatToInput"
+                                         value="1" min="0" max="1" />
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+ 
+                     <h4 class="filter-subtitle">Category</i></h4>
+                     <input type="radio" name="Category" value="All">
+                     <label for="All">All</label><br>
+                     <input type="radio" name="Category" value="Normal">
+                     <label for="Normal">Normal</label><br>
+                     <input type="radio" name="Category" value="StatTrak">
+                     <label for="StatTrak">StatTrak</label><br>
+                     <input type="radio" name="Category" value="Souvenir">
+                     <label for="Souvenir">Souvenir</label><br>
+ 
+                     <h4 class="filter-subtitle">Rarity</i></h4>
+                     <div class="filter-col">
+                         <div>
+                             <input type="checkbox" name="Rarity" value="All">
+                             <label for="All">All</label><br>
+                             <input type="checkbox" name="Rarity" value="ConsumerGrade">
+                             <label for="ConsumerGrade">Consumer Grade</label><br>
+                             <input type="checkbox" name="Rarity" value="Mil-SpecGrade">
+                             <label for="Mil-SpecGrade">Mil-Spec Grade</label><br>
+                             <input type="checkbox" name="Rarity" value="IndustrialGrade">
+                             <label for="IndustrialGrade">Industrial Grade</label><br>
+                             <input type="checkbox" name="Rarity" value="Restricted">
+                             <label for="Restricted">Restricted</label><br>
+                             <input type="checkbox" name="Rarity" value="Classified">
+                             <label for="Classified">Classified</label><br>
+                             <input type="checkbox" name="Rarity" value="Covert">
+                             <label for="Covert">Covert</label><br>
+                             <input type="checkbox" name="Rarity" value="Distinguished">
+                             <label for="Distinguished">Distinguished</label><br>
+                             <input type="checkbox" name="Rarity" value="Exceptional">
+                             <label for="Exceptional">Exceptional</label><br>
+                         </div>
+                         <div>
+                             <input type="checkbox" name="Rarity" value="Superior">
+                             <label for="Superior">Superior</label><br>
+                             <input type="checkbox" name="Rarity" value="Master">
+                             <label for="Master">Master</label><br>
+                             <input type="checkbox" name="Rarity" value="BaseGrade">
+                             <label for="BaseGrade">Base Grade</label><br>
+                             <input type="checkbox" name="Rarity" value="Extraordinary">
+                             <label for="Extraordinary">Extraordinary</label><br>
+                             <input type="checkbox" name="Rarity" value="HighGrade">
+                             <label for="HighGrade">High Grade</label><br>
+                             <input type="checkbox" name="Rarity" value="Remarkable">
+                             <label for="Remarkable">Remarkable</label><br>
+                             <input type="checkbox" name="Rarity" value="Exotic">
+                             <label for="Exotic">Exotic</label><br>
+                             <input type="checkbox" name="Rarity" value="Contraband">
+                             <label for="Contraband">Contraband</label><br>
+                         </div>
+                     </div>
+ 
+                     <h4 class="filter-subtitle">Item category</i></h4>
+                     <div class="filter-col">
+                         <div>
+                             <input type="radio" name="ItemCategory" value="All">
+                             <label for="All">All</label><br>
+                             <input type="radio" name="ItemCategory" value="Knives">
+                             <label for="Knives">Knives</label><br>
+                             <input type="radio" name="ItemCategory" value="Gloves">
+                             <label for="Gloves">Gloves</label><br>
+                             <input type="radio" name="ItemCategory" value="Rifles">
+                             <label for="Rifles">Rifles</label><br>
+                             <input type="radio" name="ItemCategory" value="SniperRifles">
+                             <label for="SniperRifles">Sniper Rifles</label><br>
+                         </div>
+                         <div>
+                             <input type="radio" name="ItemCategory" value="Pistols">
+                             <label for="Pistols">Pistols</label><br>
+                             <input type="radio" name="ItemCategory" value="SMG">
+                             <label for="SMG">SMG</label><br>
+                             <input type="radio" name="ItemCategory" value="Shotguns">
+                             <label for="Shotguns">Shotguns</label><br>
+                             <input type="radio" name="ItemCategory" value="Machineguns">
+                             <label for="Machineguns">Machine guns</label><br>
+                             <input type="radio" name="ItemCategory" value="Others">
+                             <label for="Others">Others</label><br>
+                         </div>
+                     </div>
+                 </form>
+             </div>
+         </div>
+        <div class="products-result col-md-9">
+            <h3 class="res-title">E-commerce CSGO: Best marketplace for trading your skins</h3>
+            <form action="" method="get">
+                <div class="search-section">           
+                <div class="search-bar">
+                    <i class="ti-search"> </i>
+                    <input type="text" name="search" value="" placeholder="Search">
+                </div>
+                <div class="search-filter">
+                    <i class="ti-filter"></i>
+                    <select name="Sort">
+                        <option value="">Sort by</option>
+                        <option value="priceAsc">Price Up</i></option>
+                        <option value="priceDesc">Price Down</i></option>
+                    </select>
+                </div>
+            </div>
+            </form>
+            <div class="market-products">
+                <div class="item-slot card p-2">
+                    <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
+                    <div class="card-body">
+                        <div class="item-slot-title">
+                            <h4 class="card-title fw-bold">Name</h4>
+                            <h4 class="item-price card-title fw-bold">Price</h4>
+                        </div>
+                        <p class="card-text">
+                            <div class="item-slot-text">
+                                <span>Float: 0.111</span>
+                                <br/>
+                                <span>Type</span>
+                            </div>
+                            <div class="item-slot-text">
+                                <span>Category</span>
+                                <br/>
+                                <span>Rarity</span>
+                            </div>
+                        </p>
+                        <button class="button-41" role="button">BUY NOW</button>
+                    </div>
+                </div>
+                <div class="item-slot card p-2">
+                    <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
+                    <div class="card-body">
+                        <div class="item-slot-title">
+                            <h4 class="card-title fw-bold">Name</h4>
+                            <h4 class="item-price card-title fw-bold">Price</h4>
+                        </div>
+                        <p class="card-text">
+                            <div class="item-slot-text">
+                                <span>Float: 0.111</span>
+                                <span>Type</span>
+                            </div>
+                            <div class="item-slot-text">
+                                <span>Category</span>
+                                <span>Rarity</span>
+                            </div>
+                        </p>
+                        <button class="button-41" role="button">BUY NOW</button>
+                        
+                    </div>
+                </div>
+                <div class="item-slot card p-2">
+                    <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
+                    <div class="card-body">
+                        <div class="item-slot-title">
+                            <h4 class="card-title fw-bold">Name</h4>
+                            <h4 class="item-price card-title fw-bold">Price</h4>
+                        </div>
+                        <p class="card-text">
+                            <div class="item-slot-text">
+                                <span>Float: 0.111</span>
+                                <span>Type</span>
+                            </div>
+                            <div class="item-slot-text">
+                                <span>Category</span>
+                                <span>Rarity</span>
+                            </div>
+                        </p>
+                        <button class="button-41" role="button">BUY NOW</button>
+                        
+                    </div>
+                </div>
+                <div class="item-slot card p-2">
+                    <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
+                    <div class="card-body">
+                        <div class="item-slot-title">
+                            <h4 class="card-title fw-bold">Name</h4>
+                            <h4 class="item-price card-title fw-bold">Price</h4>
+                        </div>
+                        <p class="card-text">
+                            <div class="item-slot-text">
+                                <span>Float: 0.111</span>
+                                <span>Type</span>
+                            </div>
+                            <div class="item-slot-text">
+                                <span>Category</span>
+                                <span>Rarity</span>
+                            </div>
+                        </p>
+                        <button class="button-41" role="button">BUY NOW</button>
+                    </div>
+                </div>
+                <div class="item-slot card p-2">
+                    <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
+                    <div class="card-body">
+                        <div class="item-slot-title">
+                            <h4 class="card-title fw-bold">Name</h4>
+                            <h4 class="item-price card-title fw-bold">Price</h4>
+                        </div>
+                        <p class="card-text">
+                            <div class="item-slot-text">
+                                <span>Float: 0.111</span>
+                                <span>Type</span>
+                            </div>
+                            <div class="item-slot-text">
+                                <span>Category</span>
+                                <span>Rarity</span>
+                            </div>
+                        </p>
+                        <button class="button-41" role="button">BUY NOW</button>
+                        
+                    </div>
+                </div>
+                <div class="item-slot card p-2">
+                    <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
+                    <div class="card-body">
+                        <div class="item-slot-title">
+                            <h4 class="card-title fw-bold">Name</h4>
+                            <h4 class="item-price card-title fw-bold">Price</h4>
+                        </div>
+                        <p class="card-text">
+                            <div class="item-slot-text">
+                                <span>Float: 0.111</span>
+                                <span>Type</span>
+                            </div>
+                            <div class="item-slot-text">
+                                <span>Category</span>
+                                <span>Rarity</span>
+                            </div>
+                        </p>
+                        <button class="button-41" role="button">BUY NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="overlay">
+            
+        </div>
+        
+
+    </section>
+    <script src="/javascripts/market.js"></script>
+    <script>screenSize();</script>
+</body>
+
+</html>
+
