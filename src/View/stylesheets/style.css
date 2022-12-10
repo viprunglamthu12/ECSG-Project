@@ -195,7 +195,6 @@ html {
     font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
     font-size: 12px;
     justify-content: center;
-    line-height: 28px;
     max-width: 100%;
     padding: 14px 22px;
     text-decoration: none;
@@ -307,8 +306,7 @@ html {
 
 /* ----------- Market ------------- */
 
-#market,
-#profile {
+#market {
     padding-top: 75px;
     color: white;
     line-height: 1.4;
@@ -327,6 +325,9 @@ html {
     text-align: center;
     padding-bottom: 8px;
     font-weight: 700;
+}
+.filter-title i{
+    color: #25daa5;
 }
 
 .filter-content label {
@@ -530,10 +531,21 @@ input[type="range"] {
 }
 
 .item-slot {
+    position: relative;
     background-color: #1a242e;
     width: 30%;
     margin-bottom: 2rem;
     box-sizing: border-box;
+}
+
+.item-float{
+    padding: 2px;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    background-color: #2d2f3e;
 }
 
 .item-img {
@@ -543,10 +555,17 @@ input[type="range"] {
 }
 
 .item-slot .card-body {
-    padding: 2rem;
+    padding: 0 2rem 2rem;
 }
 
-.item-slot-title,
+.item-slot-title .item-name{
+    font-size: smaller;
+}
+
+.item-slot-title .item-price{
+    font-size: 2.5rem;
+}
+
 .item-slot-text {
     display: flex;
     flex-wrap: wrap;
@@ -613,7 +632,7 @@ input[type="range"] {
 
 
 /*------profile---------- */
-#profile {
+#profile{
     padding:75px 2rem 25px;
     color: white;
     line-height: 1.4;
@@ -660,3 +679,93 @@ input[type="range"] {
     background: rgba(0, 0, 0, 0.3);
     z-index: 11;
 } */
+
+
+/* ---------------- Inventory ------------------- */
+#inventory {
+    padding:50px 2rem 25px;
+    color: white;
+    line-height: 1.4;
+}
+.inventory-title{
+    padding-bottom: 8px;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.inventory-place{
+    margin: 0 5%;
+}
+
+.inventory-place .search-bar{
+    width: 40%;
+}
+
+.inventory-place .search-filter{
+    width: 13%;
+}
+
+.inventory-items
+{
+    padding-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inventory-items .item{
+    margin-bottom: 2rem;
+    position: relative;
+    padding: 2rem 0 0; 
+    background-color: #1a242e;
+    width: 18%;
+}
+
+.inventory-items .item-img{
+    background: none;
+    width: 100%;
+}
+.item-para-top{
+    padding: 0.5rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.item-para-top .category,
+.item-para-top .exterior
+{
+    width: 50%;
+    font-size: smaller;
+}
+
+.item-para-top .exterior{
+    text-align: right;
+}
+
+.item-para-bottom{
+    padding: 0.5rem;
+    width: 100%;
+    position: absolute;
+    top: bottom;
+    left: 0;
+    font-size: smaller;
+    background-color: #2d2f3e;
+}
+.item-para-main
+{
+    padding: 2rem 0.5rem 0;
+}
+
+.item-para-main .item-price{
+    font-size: 2rem;
+}
+
+.item-name{
+    color: white;
+    font-size: 1.5rem;
+}
