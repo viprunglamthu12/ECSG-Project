@@ -29,7 +29,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><strong>E-commerce CSG0</strong></a>
+                    <a class="navbar-brand" href="#"><strong>E-commerce CSGO</strong></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
@@ -51,22 +51,187 @@
             <i class="ti-user"></i> PROFILE
         </h1>
         <div class="profile-body">
-            <div class="profile-inf col-md-5">
+            <div class="profile-inf">
                 <h3 class="user-name">Name</h3>
                 <h4 class="user-steam-id"><img src="images/steam-icon-2.png" alt="Steam Symbol"
-                    style="width:25px;height:25px;">  Steam ID: 76561199174734846</h4>
-                <h3 class="user-balance">Balance: <i class="ti-money"> </i></h3>
+                        style="width:25px;height:25px;"> Steam ID: 76561199174734846</h4>
+                <h3 class="user-balance">Balance: <i class="ti-money"> </i> 8000</h3>
+                <div class="edit-inf-button">
+                    <button class="button-12" role="button" data-toggle="modal" data-target="#infModal"><i class="ti-pencil"></i> Edit information</button>
+                </div>
             </div>
-            <div class="profile-func col-md-3">
-                <button class="button-41" role="button"><i class="ti-money" style="color: white;"></i> Refill Balance</button>
-                <button class="button-42" role="button"><i class="ti-wallet"></i>  Withdraw Money</button>
+            <div class="profile-func">
+                <button class="button-41" role="button"><i class="ti-money" style="color: white;"></i> Refill
+                    Balance</button>
+                <button class="button-42" role="button"><i class="ti-wallet"></i> Withdraw Money</button>
             </div>
             <div class="profile-para">
-                <h3><i class="ti-download"></i> Withdraw: <i class="ti-money"></i></h3>
-                    <h3><i class="ti-check-box"></i> Sold: <i class="ti-money"></i></h3>
-                        <h3><i class="ti-stats-up"></i> Trades:</h3>
+                <h3><i class="ti-download"></i> Withdraw: <i class="ti-money"></i> 8000</h3>
+                <h3><i class="ti-check-box"></i> Sold: <i class="ti-money"></i> 8000</h3>
+                <h3><i class="ti-stats-up"></i> Trades: 123</h3>
             </div>
-        </div>  
+        </div>
+    </section>
+
+    <!-- On sale -->
+    <section id="on-sale">
+        <h1 class="on-sale-title">
+            <img src="/images/on_sale_icon.svg" alt="inventory-icon" style="width: 35px;"> On Sale
+        </h1>
+        <div class="inventory-items">
+            <div data-toggle="modal" data-target="#itemModal" role="button" class="item">
+                <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
+                <div class="item-para-top">
+                    <div class="category">
+                        StatTrak
+                    </div>
+                    <div class="exterior">
+                        Battle-Scarred
+                    </div>
+                </div>
+                <div class="item-para-main">
+                    <h4 class="item-name">Butterfly Knife Doppler</h4>
+                    <h4 class="item-price"><i class="ti-money"></i> 123.86</h4>
+                </div>
+            </div>
+    </section>
+
+    <section id="item-modal">
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal anil" id="itemModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title"><i class="title-i-color ti-comment-alt"></i> Information</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <img class="item-img img-responsive" src="/images/tmp.png" alt="">
+                                </div>
+                                <div class="item-modal-infor col-md-7 ml-auto">
+                                    <h1 class="item-name">Butterfly Knife Ganma Doppler</h1>
+                                    <div class="price">
+                                        <div class="item-price">
+                                            <div style="color: #737983;font-size: 16px;padding-top: 1.25rem;">
+                                                <p>
+                                                    Your price:
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <i class="ti-money">8000</i>
+                                            </div>
+                                        </div>
+                                        <div class="item-suggested-price">
+                                            <div style="color: #737983;">Suggested price:</div>
+                                            <i class="ti-money title-i-color"></i>10000
+                                        </div>
+                                    </div>
+                                    <div class="float">
+                                        <div>Float:</div>
+                                        <div class="item-float">0.48928242921829</div>
+                                    </div>
+                                    <div class="type">
+                                        <div>Type:</div>
+                                        <div class="item-type">Knife</div>
+                                    </div>
+                                    <div class="category">
+                                        <div>Category:</div>
+                                        <div class="item-category">Butterfly Knife</div>
+                                    </div>
+                                    <div class="rarity">
+                                        <div>Rarity:</div>
+                                        <div class="item-category">Covert</div>
+                                    </div>
+                                    <div class="exterior">
+                                        <div>Exterior:</div>
+                                        <div class="item-exterior">Factory New</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <form action="" method="post" class="max-width">
+                                <input type="submit" value="purchase">
+                                <label for="purchase" class="sub-div-center max-width">
+                                    <button class="button-41" role="button"><strong>REMOVE</strong></button>
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inf-modal">
+        <div class="modal fade" id="infModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="regis-title">
+                            <h2><img src="images/steam-icon-2.png" alt="Steam Symbol" style="width:3rem;height:3rem;">
+                                Steam
+                                Information</h2>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="main-regis-form">
+                            <form action="#" method="post">
+                                <div class="regis-body">
+                                    <div class="required-inf">
+                                        <div class="sub-div-bettween">
+                                            <p>
+                                                Steam Trade URL
+                                            </p>
+                                            <a
+                                                href="https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url">Get
+                                                it here</a>
+                                        </div>
+                                        <input class="text" type="text" name="tradeURL"
+                                            placeholder="User Trade URL" required="">
+                                    </div>
+                                    <div class="required-inf">
+                                        <p>
+                                            API Key
+                                        </p>
+                                        <input class="text" type="text" name="apikey" placeholder="User API Key"
+                                            required="">
+                                    </div>
+                                    <div class="required-inf">
+                                        <p>
+                                            Steam Authenticate Code
+                                        </p>
+                                        <input class="text" type="text" name="steamAuthCode"
+                                            placeholder="User Authenticate Code" required="">
+                                    </div>
+                                    <div class="required-inf">
+                                        <p>
+                                            E-mail
+                                        </p>
+                                        <input class="text email" type="email" name="email" placeholder="User E-mail"
+                                            required="">
+                                    </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="saveInf">
+                        <label for="saveInf" class="sub-div-center max-width">
+                            <button class="button-41" role="button" style="width:50%">Save</button>
+                        </label>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
     </section>
 
 </body>

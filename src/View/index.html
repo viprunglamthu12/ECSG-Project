@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce CSGo</title>
+    <link rel="icon" href="images/E-icon.png">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -29,17 +30,36 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><strong>E-commerce CSGO</strong></a>
+                    <a class="navbar-brand" href="#"><strong><img src="images/E-icon.png" alt="E-commerce Symbol"
+                                style="width:32px;height:32px;">- commerce CSGO</strong></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="#">Home</a></li>
                         <li><a href="#">Market</a></li>
-                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Inventory</a></li>
                         <li><a href="#">Blog</a></li>
+                        <li>
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown">
+                                Account <i class="ti-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">
+                                        <img src="images/user.svg" style="width:18px; height:18px;"> Profile
+                                    </a>
+                                </li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="#">
+                                        <img src="images/log-out.svg"> Log out
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li><a href="#"><img src="images/steam-logo.png" alt="Steam Symbol"
                                     style="width:20px;height:20px;"> Sign Up/Log in</a></li>
                     </ul>
+
                 </div>
             </div>
         </nav>
@@ -57,10 +77,6 @@
         </div>
     </section>
 
-    <!-- Top skins -->
-    <section id="top-skins">
-        
-    </section>
 
     <!-- About us -->
     <section id="about-us">
@@ -102,6 +118,12 @@
         </div>
     </section>
 
+
+    <!-- Support -->
+    <section id="support">
+        <a href="#"><img class="mess-icon" src="images/chat.png" alt="messenger icon">
+    </section>
+
     <!-- Footer -->
     <section id="footer">
         <footer class="text-center text-lg-start bg-white text-muted">
@@ -113,9 +135,8 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-5 col-xl-5 mx-auto mb-4">
                             <!-- Content -->
-                            <h4 class="text-uppercase fw-bold mb-4">
-                                <i class="me-3 text-secondary"></i>E-commerce CSGo
-                            </h4>
+                            <img src="images/E-icon.png" alt="E-commerce Symbol"
+                                style="width:7rem;height:7rem; margin-left: 10rem; margin-top:2rem ;">
                             <p>
                                 Linh Trung Ward, Thu Duc City, Vietnam
                             </p>
@@ -182,6 +203,7 @@
             <!-- Copyright -->
         </footer>
     </section>
+
 </body>
 
 </html>

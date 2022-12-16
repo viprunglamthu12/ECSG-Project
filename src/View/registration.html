@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce CSGo</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+        integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="icon/themify-icons/themify-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <!-- nav bar -->
+    <section id="nav-bar">
+        <nav id="nav" class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><strong>E-commerce CSGO</strong></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Market</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#"><img src="images/steam-logo.png" alt="Steam Symbol"
+                                    style="width:20px;height:20px;"> Sign Up/Log in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section id="registration-form">
+        <div class="main-regis-place">
+            <h4>
+                Please filll in necessary information below to establish connection from our server to your steam
+                account.
+                <br>Your information will be absolutely secure according to our Terms & Policy.
+            </h4>
+            <div class="main-regis-form">
+                <div class="regis-title">
+                    <h2><img src="images/steam-icon-2.png" alt="Steam Symbol" style="width:3rem;height:3rem;"> Steam
+                        Information</h2>
+                </div>
+                <form action="#" method="post">
+                    <div class="regis-body">
+                        <div class="required-inf">
+                            <p>
+                                Steam Account
+                            </p>
+                            <input class="text" type="text" name="steamAccount" placeholder="Your steam account"
+                                required="">
+                        </div>
+                        <div class="required-inf">
+                            <p>
+                                Steam Password
+                            </p>
+                            <input class="text" type="password" name="steamPassword" placeholder="Your steam password"
+                                required="">
+                        </div>
+                        <div class="required-inf">
+                            <div class="sub-div-bettween">
+                                <p>
+                                    Steam Trade URL 
+                                </p>
+                                <a href="https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url">Get it here</a>
+                            </div>
+                            <input class="text" type="text" name="tradeURL" placeholder="Your steam Trade URL"
+                                required="">
+                        </div>
+                        <div class="required-inf">
+                            <div class="sub-div-bettween">
+                                <p>
+                                    API Key 
+                                </p>
+                                <a href="https://steamcommunity.com/dev/apikey">Get it here</a>
+                            </div>
+                            
+                            <input class="text" type="text" name="apikey" placeholder="Your steam API Key" required="">
+                        </div>
+                        <div class="required-inf">
+                            <p>
+                                Steam Authenticate Code
+                            </p>
+                            <input class="text" type="text" name="steamAuthCode"
+                                placeholder="Your steam Authenticate Code" required="">
+                        </div>
+                        <div class="required-inf">
+                            <p>
+                                E-mail
+                            </p>
+                            <input class="text email" type="email" name="email" placeholder="Your E-mail" required="">
+                        </div>
+                        <div class="check-box">
+                            <div>
+                                <input type="checkbox" class="term1" required="">
+                                <label for="term1">Your trade will be automatically created through our server.</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="term2" required="">
+                                <label for="term2">Incoming trade offers results of your buy order will be automatically
+                                    received.</label>
+                            </div>
+                        </div>
+                        <input type="submit" value="signup">
+                        <label for="signup" class="sub-div-center max-width" >
+                            <button class="button-41" role="button" style="width:50%">Submit</button>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,178 +47,179 @@
 
     <!-- Market -->
     <section id="market">
-         <!-- market filter -->
-         <button id="filter-btn" onclick="filterButton()"><i class="ti-menu-alt"></i> Filters</button>
-         <div class="filter col-md-3" id="filter">
-             <h3 class="filter-title"> <i class="ti-shopping-cart"></i> Marketplace</h3>
-             <div class="filter-title-row">
-                 <p><i class="ti-menu-alt"></i> Filters</p>
-                 <a href="#" class="reset"><i class="ti-reload"></i> Reset</a>
-             </div>
-             <div class="filter-content">
-                 <form action="" method="get">
-                     <div class="price">
-                         <h4 class="filter-subtitle">Price <i class="ti-money"></i></h4>
-                         <div class="filter-range">
-                             <div class="range_container">
-                                 <div class="sliders_control">
-                                     <input id="priceFromSlider" type="range" value="0" min="0" max="21999" />
-                                     <input id="priceToSlider" type="range" value="21999" min="0" max="21999" />
-                                 </div>
-                                 <div class="form_control">
-                                     <div class="form_control_container">
-                                         <div class="form_control_container__time">Min</div>
-                                         <input class="form_control_container__time__input" type="number"
-                                             id="priceFromInput" value="0" min="0" max="21999" />
-                                     </div>
-                                     <div class="form_control_container">
-                                         <div class="form_control_container__time">Max</div>
-                                         <input class="form_control_container__time__input" type="number"
-                                             id="priceToInput" value="21999" min="0" max="21999" />
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <h4 class="filter-subtitle">Exterior <i class="ti-star"></i></h4>
-                     <input type="checkbox" name="Exterior" value="Factory New">
-                     <label for="Factory New">Factory New</label><br>
-                     <input type="checkbox" name="Exterior" value="MinimalWear">
-                     <label for="MinimalWear">Minimal Wear</label><br>
-                     <input type="checkbox" name="Exterior" value="Field-Tested">
-                     <label for="Field-Tested">Field-Tested</label><br>
-                     <input type="checkbox" name="Exterior" value="Well-Worn">
-                     <label for="Well-Worn">Well-Worn</label><br>
-                     <input type="checkbox" name="Exterior" value="Battle-Scarred">
-                     <label for="Battle-Scarred">Battle-Scarred</label><br>
- 
-                     <h4 class="filter-subtitle">Float</i></h4>
-                     <div class="filter-range">
-                         <div class="range_container">
-                             <div class="sliders_control">
-                                 <input id="floatFromSlider" type="range" value="0" min="0" max="1" step="0.00001" />
-                                 <input id="floatToSlider" type="range" value="1" min="0" max="1" step="0.00001" />
-                             </div>
-                             <div class="form_control">
-                                 <div class="form_control_container">
-                                     <div class="form_control_container__time">Min</div>
-                                     <input class="form_control_container__time__input" type="number" id="floatFromInput"
-                                         value="0" min="0" max="1" />
-                                 </div>
-                                 <div class="form_control_container">
-                                     <div class="form_control_container__time">Max</div>
-                                     <input class="form_control_container__time__input" type="number" id="floatToInput"
-                                         value="1" min="0" max="1" />
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
- 
-                     <h4 class="filter-subtitle">Category</i></h4>
-                     <input type="radio" name="Category" value="All">
-                     <label for="All">All</label><br>
-                     <input type="radio" name="Category" value="Normal">
-                     <label for="Normal">Normal</label><br>
-                     <input type="radio" name="Category" value="StatTrak">
-                     <label for="StatTrak">StatTrak</label><br>
-                     <input type="radio" name="Category" value="Souvenir">
-                     <label for="Souvenir">Souvenir</label><br>
- 
-                     <h4 class="filter-subtitle">Rarity</i></h4>
-                     <div class="filter-col">
-                         <div>
-                             <input type="checkbox" name="Rarity" value="All">
-                             <label for="All">All</label><br>
-                             <input type="checkbox" name="Rarity" value="ConsumerGrade">
-                             <label for="ConsumerGrade">Consumer Grade</label><br>
-                             <input type="checkbox" name="Rarity" value="Mil-SpecGrade">
-                             <label for="Mil-SpecGrade">Mil-Spec Grade</label><br>
-                             <input type="checkbox" name="Rarity" value="IndustrialGrade">
-                             <label for="IndustrialGrade">Industrial Grade</label><br>
-                             <input type="checkbox" name="Rarity" value="Restricted">
-                             <label for="Restricted">Restricted</label><br>
-                             <input type="checkbox" name="Rarity" value="Classified">
-                             <label for="Classified">Classified</label><br>
-                             <input type="checkbox" name="Rarity" value="Covert">
-                             <label for="Covert">Covert</label><br>
-                             <input type="checkbox" name="Rarity" value="Distinguished">
-                             <label for="Distinguished">Distinguished</label><br>
-                             <input type="checkbox" name="Rarity" value="Exceptional">
-                             <label for="Exceptional">Exceptional</label><br>
-                         </div>
-                         <div>
-                             <input type="checkbox" name="Rarity" value="Superior">
-                             <label for="Superior">Superior</label><br>
-                             <input type="checkbox" name="Rarity" value="Master">
-                             <label for="Master">Master</label><br>
-                             <input type="checkbox" name="Rarity" value="BaseGrade">
-                             <label for="BaseGrade">Base Grade</label><br>
-                             <input type="checkbox" name="Rarity" value="Extraordinary">
-                             <label for="Extraordinary">Extraordinary</label><br>
-                             <input type="checkbox" name="Rarity" value="HighGrade">
-                             <label for="HighGrade">High Grade</label><br>
-                             <input type="checkbox" name="Rarity" value="Remarkable">
-                             <label for="Remarkable">Remarkable</label><br>
-                             <input type="checkbox" name="Rarity" value="Exotic">
-                             <label for="Exotic">Exotic</label><br>
-                             <input type="checkbox" name="Rarity" value="Contraband">
-                             <label for="Contraband">Contraband</label><br>
-                         </div>
-                     </div>
- 
-                     <h4 class="filter-subtitle">Item category</i></h4>
-                     <div class="filter-col">
-                         <div>
-                             <input type="radio" name="ItemCategory" value="All">
-                             <label for="All">All</label><br>
-                             <input type="radio" name="ItemCategory" value="Knives">
-                             <label for="Knives">Knives</label><br>
-                             <input type="radio" name="ItemCategory" value="Gloves">
-                             <label for="Gloves">Gloves</label><br>
-                             <input type="radio" name="ItemCategory" value="Rifles">
-                             <label for="Rifles">Rifles</label><br>
-                             <input type="radio" name="ItemCategory" value="SniperRifles">
-                             <label for="SniperRifles">Sniper Rifles</label><br>
-                         </div>
-                         <div>
-                             <input type="radio" name="ItemCategory" value="Pistols">
-                             <label for="Pistols">Pistols</label><br>
-                             <input type="radio" name="ItemCategory" value="SMG">
-                             <label for="SMG">SMG</label><br>
-                             <input type="radio" name="ItemCategory" value="Shotguns">
-                             <label for="Shotguns">Shotguns</label><br>
-                             <input type="radio" name="ItemCategory" value="Machineguns">
-                             <label for="Machineguns">Machine guns</label><br>
-                             <input type="radio" name="ItemCategory" value="Others">
-                             <label for="Others">Others</label><br>
-                         </div>
-                     </div>
-                 </form>
-             </div>
-         </div>
+        <!-- market filter -->
+        <button id="filter-btn" onclick="filterButton()"><i class="ti-menu-alt"></i> Filters</button>
+        <div class="filter col-md-3" id="filter">
+            <h3 class="filter-title"> <i class="ti-shopping-cart"></i> Marketplace</h3>
+            <div class="filter-title-row">
+                <p><i class="ti-menu-alt"></i> Filters</p>
+                <a href="#" class="reset"><i class="ti-reload"></i> Reset</a>
+            </div>
+            <div class="filter-content">
+                <form action="" method="get">
+                    <div class="price">
+                        <h4 class="filter-subtitle">Price <i class="ti-money"></i></h4>
+                        <div class="filter-range">
+                            <div class="range_container">
+                                <div class="sliders_control">
+                                    <input id="priceFromSlider" type="range" value="0" min="0" max="21999" />
+                                    <input id="priceToSlider" type="range" value="21999" min="0" max="21999" />
+                                </div>
+                                <div class="form_control">
+                                    <div class="form_control_container">
+                                        <div class="form_control_container__time">Min</div>
+                                        <input class="form_control_container__time__input" type="number"
+                                            id="priceFromInput" value="0" min="0" max="21999" />
+                                    </div>
+                                    <div class="form_control_container">
+                                        <div class="form_control_container__time">Max</div>
+                                        <input class="form_control_container__time__input" type="number"
+                                            id="priceToInput" value="21999" min="0" max="21999" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="filter-subtitle">Exterior <i class="ti-star"></i></h4>
+                    <input type="checkbox" name="Exterior" value="Factory New">
+                    <label for="Factory New">Factory New</label><br>
+                    <input type="checkbox" name="Exterior" value="MinimalWear">
+                    <label for="MinimalWear">Minimal Wear</label><br>
+                    <input type="checkbox" name="Exterior" value="Field-Tested">
+                    <label for="Field-Tested">Field-Tested</label><br>
+                    <input type="checkbox" name="Exterior" value="Well-Worn">
+                    <label for="Well-Worn">Well-Worn</label><br>
+                    <input type="checkbox" name="Exterior" value="Battle-Scarred">
+                    <label for="Battle-Scarred">Battle-Scarred</label><br>
+
+                    <h4 class="filter-subtitle">Float</i></h4>
+                    <div class="filter-range">
+                        <div class="range_container">
+                            <div class="sliders_control">
+                                <input id="floatFromSlider" type="range" value="0" min="0" max="1" step="0.00001" />
+                                <input id="floatToSlider" type="range" value="1" min="0" max="1" step="0.00001" />
+                            </div>
+                            <div class="form_control">
+                                <div class="form_control_container">
+                                    <div class="form_control_container__time">Min</div>
+                                    <input class="form_control_container__time__input" type="number" id="floatFromInput"
+                                        value="0" min="0" max="1" />
+                                </div>
+                                <div class="form_control_container">
+                                    <div class="form_control_container__time">Max</div>
+                                    <input class="form_control_container__time__input" type="number" id="floatToInput"
+                                        value="1" min="0" max="1" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="filter-subtitle">Category</i></h4>
+                    <input type="radio" name="Category" value="All">
+                    <label for="All">All</label><br>
+                    <input type="radio" name="Category" value="Normal">
+                    <label for="Normal">Normal</label><br>
+                    <input type="radio" name="Category" value="StatTrak">
+                    <label for="StatTrak">StatTrak</label><br>
+                    <input type="radio" name="Category" value="Souvenir">
+                    <label for="Souvenir">Souvenir</label><br>
+
+                    <h4 class="filter-subtitle">Rarity</i></h4>
+                    <div class="filter-col">
+                        <div>
+                            <input type="checkbox" name="Rarity" value="All">
+                            <label for="All">All</label><br>
+                            <input type="checkbox" name="Rarity" value="ConsumerGrade">
+                            <label for="ConsumerGrade">Consumer Grade</label><br>
+                            <input type="checkbox" name="Rarity" value="Mil-SpecGrade">
+                            <label for="Mil-SpecGrade">Mil-Spec Grade</label><br>
+                            <input type="checkbox" name="Rarity" value="IndustrialGrade">
+                            <label for="IndustrialGrade">Industrial Grade</label><br>
+                            <input type="checkbox" name="Rarity" value="Restricted">
+                            <label for="Restricted">Restricted</label><br>
+                            <input type="checkbox" name="Rarity" value="Classified">
+                            <label for="Classified">Classified</label><br>
+                            <input type="checkbox" name="Rarity" value="Covert">
+                            <label for="Covert">Covert</label><br>
+                            <input type="checkbox" name="Rarity" value="Distinguished">
+                            <label for="Distinguished">Distinguished</label><br>
+                            <input type="checkbox" name="Rarity" value="Exceptional">
+                            <label for="Exceptional">Exceptional</label><br>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="Rarity" value="Superior">
+                            <label for="Superior">Superior</label><br>
+                            <input type="checkbox" name="Rarity" value="Master">
+                            <label for="Master">Master</label><br>
+                            <input type="checkbox" name="Rarity" value="BaseGrade">
+                            <label for="BaseGrade">Base Grade</label><br>
+                            <input type="checkbox" name="Rarity" value="Extraordinary">
+                            <label for="Extraordinary">Extraordinary</label><br>
+                            <input type="checkbox" name="Rarity" value="HighGrade">
+                            <label for="HighGrade">High Grade</label><br>
+                            <input type="checkbox" name="Rarity" value="Remarkable">
+                            <label for="Remarkable">Remarkable</label><br>
+                            <input type="checkbox" name="Rarity" value="Exotic">
+                            <label for="Exotic">Exotic</label><br>
+                            <input type="checkbox" name="Rarity" value="Contraband">
+                            <label for="Contraband">Contraband</label><br>
+                        </div>
+                    </div>
+
+                    <h4 class="filter-subtitle">Item category</i></h4>
+                    <div class="filter-col">
+                        <div>
+                            <input type="radio" name="ItemCategory" value="All">
+                            <label for="All">All</label><br>
+                            <input type="radio" name="ItemCategory" value="Knives">
+                            <label for="Knives">Knives</label><br>
+                            <input type="radio" name="ItemCategory" value="Gloves">
+                            <label for="Gloves">Gloves</label><br>
+                            <input type="radio" name="ItemCategory" value="Rifles">
+                            <label for="Rifles">Rifles</label><br>
+                            <input type="radio" name="ItemCategory" value="SniperRifles">
+                            <label for="SniperRifles">Sniper Rifles</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" name="ItemCategory" value="Pistols">
+                            <label for="Pistols">Pistols</label><br>
+                            <input type="radio" name="ItemCategory" value="SMG">
+                            <label for="SMG">SMG</label><br>
+                            <input type="radio" name="ItemCategory" value="Shotguns">
+                            <label for="Shotguns">Shotguns</label><br>
+                            <input type="radio" name="ItemCategory" value="Machineguns">
+                            <label for="Machineguns">Machine guns</label><br>
+                            <input type="radio" name="ItemCategory" value="Others">
+                            <label for="Others">Others</label><br>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
         <div class="products-result col-md-9">
             <h3 class="res-title">E-commerce CSGO: Best marketplace for trading your skins</h3>
             <form action="" method="get">
-                <div class="search-section">           
-                <div class="search-bar">
-                    <i class="ti-search"> </i>
-                    <input type="text" name="search" value="" placeholder="Search">
+                <div class="search-section">
+                    <div class="search-bar">
+                        <i class="ti-search"> </i>
+                        <input type="text" name="search" value="" placeholder="Search">
+                    </div>
+                    <div class="search-filter">
+                        <i class="ti-filter"></i>
+                        <select name="Sort">
+                            <option value="">Sort by</option>
+                            <option value="priceAsc">Price Up</i></option>
+                            <option value="priceDesc">Price Down</i></option>
+                        </select>
+                    </div>
                 </div>
-                <div class="search-filter">
-                    <i class="ti-filter"></i>
-                    <select name="Sort">
-                        <option value="">Sort by</option>
-                        <option value="priceAsc">Price Up</i></option>
-                        <option value="priceDesc">Price Down</i></option>
-                    </select>
-                </div>
-            </div>
             </form>
             <div class="market-products">
                 <div class="item-slot card p-2">
                     <div class="item-float">
                         0.48928242921829
-
                     </div>
                     <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
                     <div class="card-body">
@@ -226,130 +228,163 @@
                             <h4 class="item-price card-title fw-bold">Price</h4>
                         </div>
                         <p class="card-text">
-                            <div class="item-slot-text">
-                                <span>Exterior</span>
-                                <br/>
-                                <span>Type</span>
-                            </div>
-                            <div class="item-slot-text">
-                                <span>Category</span>
-                                <br/>
-                                <span>Rarity</span>
-                            </div>
+                        <div class="item-slot-text">
+                            <span>Factory New</span>
+                            <br />
+                            <span>Knife</span>
+                        </div>
+                        <div class="item-slot-text">
+                            <span>Butterfly Knife</span>
+                            <br />
+                            <span>Covert</span>
+                        </div>
                         </p>
-                        <button class="button-41" role="button">BUY NOW</button>
+                        <button type="button" class="btn btn-info btn-lg button-41" data-toggle="modal"
+                            data-target="#itemModal" role="button">BUY NOW</button>
                     </div>
                 </div>
                 <div class="item-slot card p-2">
+                    <div class="item-float">
+                        0.48928242921829
+                    </div>
                     <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
                     <div class="card-body">
                         <div class="item-slot-title">
-                            <h4 class="card-title fw-bold">Name</h4>
+                            <h4 class="card-title fw-bold">Butterfly Knife Ganma Doppler</h4>
                             <h4 class="item-price card-title fw-bold">Price</h4>
                         </div>
                         <p class="card-text">
-                            <div class="item-slot-text">
-                                <span>Float: 0.111111111111311</span>
-                                <span>Sniper Rifles</span>
-                            </div>
-                            <div class="item-slot-text">
-                                <span>Stat Trak</span>
-                                <span>Extraordinary</span>
-                            </div>
+                        <div class="item-slot-text">
+                            <span>Factory New</span>
+                            <br />
+                            <span>Knife</span>
+                        </div>
+                        <div class="item-slot-text">
+                            <span>Butterfly Knife</span>
+                            <br />
+                            <span>Covert</span>
+                        </div>
                         </p>
-                        <button class="button-41" role="button">BUY NOW</button>
-                        
+                        <button type="button" class="btn btn-info btn-lg button-41" data-toggle="modal"
+                            data-target="#itemModal" role="button">BUY NOW</button>
                     </div>
                 </div>
                 <div class="item-slot card p-2">
+                    <div class="item-float">
+                        0.48928242921829
+                    </div>
                     <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
                     <div class="card-body">
                         <div class="item-slot-title">
-                            <h4 class="card-title fw-bold">Name</h4>
+                            <h4 class="card-title fw-bold">Butterfly Knife Ganma Doppler</h4>
                             <h4 class="item-price card-title fw-bold">Price</h4>
                         </div>
                         <p class="card-text">
-                            <div class="item-slot-text">
-                                <span>Float: 0.111</span>
-                                <span>Type</span>
-                            </div>
-                            <div class="item-slot-text">
-                                <span>Category</span>
-                                <span>Rarity</span>
-                            </div>
+                        <div class="item-slot-text">
+                            <span>Factory New</span>
+                            <br />
+                            <span>Knife</span>
+                        </div>
+                        <div class="item-slot-text">
+                            <span>Butterfly Knife</span>
+                            <br />
+                            <span>Covert</span>
+                        </div>
                         </p>
-                        <button class="button-41" role="button">BUY NOW</button>
-                        
+                        <button type="button" class="btn btn-info btn-lg button-41" data-toggle="modal"
+                            data-target="#itemModal" role="button">BUY NOW</button>
                     </div>
                 </div>
                 <div class="item-slot card p-2">
+                    <div class="item-float">
+                        0.48928242921829
+                    </div>
                     <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
                     <div class="card-body">
                         <div class="item-slot-title">
-                            <h4 class="card-title fw-bold">Name</h4>
+                            <h4 class="card-title fw-bold">Butterfly Knife Ganma Doppler</h4>
                             <h4 class="item-price card-title fw-bold">Price</h4>
                         </div>
                         <p class="card-text">
-                            <div class="item-slot-text">
-                                <span>Float: 0.111</span>
-                                <span>Type</span>
-                            </div>
-                            <div class="item-slot-text">
-                                <span>Category</span>
-                                <span>Rarity</span>
-                            </div>
+                        <div class="item-slot-text">
+                            <span>Factory New</span>
+                            <br />
+                            <span>Knife</span>
+                        </div>
+                        <div class="item-slot-text">
+                            <span>Butterfly Knife</span>
+                            <br />
+                            <span>Covert</span>
+                        </div>
                         </p>
-                        <button class="button-41" role="button">BUY NOW</button>
+                        <button type="button" class="btn btn-info btn-lg button-41" data-toggle="modal"
+                            data-target="#itemModal" role="button">BUY NOW</button>
                     </div>
                 </div>
-                <div class="item-slot card p-2">
-                    <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
-                    <div class="card-body">
-                        <div class="item-slot-title">
-                            <h4 class="card-title fw-bold">Name</h4>
-                            <h4 class="item-price card-title fw-bold">Price</h4>
+    </section>
+
+    <section id="item-modal">
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal anil" id="itemModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title"><i class="title-i-color ti-comment-alt"></i> Information</h2>
                         </div>
-                        <p class="card-text">
-                            <div class="item-slot-text">
-                                <span>Float: 0.111</span>
-                                <span>Type</span>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <img class="item-img img-responsive" src="/images/tmp.png" alt="">
+                                </div>
+                                <div class="item-modal-infor col-md-7 ml-auto">
+                                    <h1 class="item-name">Butterfly Knife Ganma Doppler</h1>
+                                    <div class="price">
+                                        <div class="item-price"><i class="ti-money">8000</i></div>
+                                        <div class="item-suggested-price">
+                                            <div style="color: #737983;">Suggested price:</div>
+                                            <i class="ti-money title-i-color"></i>10000
+                                        </div>
+                                    </div>
+                                    <div class="float">
+                                        <div>Float:</div>
+                                        <div class="item-float">0.48928242921829</div>
+                                    </div>
+                                    <div class="type">
+                                        <div>Type:</div>
+                                        <div class="item-type">Knife</div>
+                                    </div>
+                                    <div class="category">
+                                        <div>Category:</div>
+                                        <div class="item-category">Butterfly Knife</div>
+                                    </div>
+                                    <div class="rarity">
+                                        <div>Rarity:</div>
+                                        <div class="item-category">Covert</div>
+                                    </div>
+                                    <div class="exterior">
+                                        <div>Exterior:</div>
+                                        <div class="item-exterior">Factory New</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="item-slot-text">
-                                <span>Category</span>
-                                <span>Rarity</span>
-                            </div>
-                        </p>
-                        <button class="button-41" role="button">BUY NOW</button>
-                        
-                    </div>
-                </div>
-                <div class="item-slot card p-2">
-                    <img class="item-img card-img-top img-responsive" src="/images/tmp.png" alt="">
-                    <div class="card-body">
-                        <div class="item-slot-title">
-                            <h4 class="card-title fw-bold">Name</h4>
-                            <h4 class="item-price card-title fw-bold">Price</h4>
                         </div>
-                        <p class="card-text">
-                            <div class="item-slot-text">
-                                <span>Float: 0.111</span>
-                                <span>Type</span>
-                            </div>
-                            <div class="item-slot-text">
-                                <span>Category</span>
-                                <span>Rarity</span>
-                            </div>
-                        </p>
-                        <button class="button-41" role="button">BUY NOW</button>
+                        <div class="modal-footer">
+                            <form action="" method="post" class="max-width">
+                                <input type="submit" value="purchase">
+                                <label for="purchase" class="sub-div-center max-width">
+                                    <button class="button-41" role="button"><strong>PURCHASE</strong></button>
+                                </label>
+                            </form>
+                        </div>
                     </div>
+
                 </div>
             </div>
+
         </div>
-       
-        <div class="overlay">
-            
-        </div>
-        
 
     </section>
     <script src="/javascripts/market.js"></script>
@@ -357,4 +392,3 @@
 </body>
 
 </html>
-
