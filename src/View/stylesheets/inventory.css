@@ -1,0 +1,96 @@
+/* ---------------- Inventory ------------------- */
+#inventory {
+    padding: 50px 2rem 25px;
+    color: white;
+    line-height: 1.4;
+}
+
+.inventory-title {
+    padding-bottom: 8px;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.inventory-place {
+    margin: 0 5%;
+}
+
+
+.inventory-items {
+    padding-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.inventory-items .item {
+    margin-bottom: 2rem;
+    margin-left: 1%;
+    margin-right: 1%;
+    position: relative;
+    padding: 2rem 0 0;
+    background-color: #1a242e;
+    width: 18%;
+    box-shadow: 0 1rem 2rem hsl(0 0% 0% / 80%);
+}
+
+.inventory-items .item:hover{
+    box-shadow: 0 14px 28px rgba(255,255,255,0.25), 0 10px 10px rgba(255,255,255,0.22);
+}
+
+.inventory-items .item-img {
+    background: none;
+    width: 100%;
+}
+
+.item-para-top {
+    padding: 0.5rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.item-para-top .category,
+.item-para-top .exterior {
+    width: 50%;
+    font-size: smaller;
+}
+
+.item-para-top .exterior {
+    text-align: right;
+}
+
+.item-para-bottom {
+    padding: 0.5rem;
+    width: 100%;
+    position: absolute;
+    top: bottom;
+    left: 0;
+    font-size: smaller;
+    background-color: #2d2f3e;
+}
+
+.item-para-main {
+    padding: 2rem 0.5rem 0;
+}
+
+.item-para-main .item-price {
+    font-size: 2rem;
+}
+
+.item-para-main .item-name {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.inventory-place .search-bar {
+    width: 40%;
+}
+
+.inventory-place .search-filter {
+    width: 15%;
+}

@@ -1,0 +1,144 @@
+#support{
+    position: fixed;
+    right: 12px;
+    bottom: 24px;
+    z-index: 12;
+}
+
+#support:hover{
+    bottom: 28px;
+}
+.mess-icon{
+    width: 8rem;
+    height: 8rem;
+    opacity: 0.6;
+}
+
+.mess-icon:hover{
+    opacity: 1;
+
+}
+
+
+/* home banner */
+#banner {
+    width: 100%;
+    height: fit-content;
+    padding-top: 50px;
+    padding-bottom: 0%;
+}
+
+.banner-content {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: bold;
+    padding-top: 10%;
+    padding-bottom: 15%;
+}
+
+.bg-img {
+    opacity: 0.9;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+.bn-content {
+    position: relative;
+}
+
+.welcome-content {
+    font-size: 5vw;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 1);
+}
+
+/* About us */
+.au-content {
+    color: white;
+    padding: 4rem 3rem;
+}
+
+.au-title {
+    font-size: 5rem;
+    font-weight: 400;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.au-text {
+    font-size: 2.5rem;
+    line-height: 1.4;
+}
+
+.member-list {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.member-item {
+    flex-basis: 16%;
+    text-align: center;
+}
+
+.member-avt {
+    padding-bottom: 1rem;
+    width: 80%;
+    border-radius: 50%;
+}
+
+.member-name {
+    font-size: 1.5rem;
+}
+
+
+/* ---home button--- */
+.button-29 {
+    margin-top: 8rem;
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 7rem;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 3rem;
+}
+
+.button-29:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button-29:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+}

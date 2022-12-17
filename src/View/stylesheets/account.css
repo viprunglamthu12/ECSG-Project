@@ -1,0 +1,146 @@
+/*------profile---------- */
+#profile, #on-sale {
+    padding: 75px 2rem 25px;
+    color: white;
+    line-height: 1.4;
+}
+.profile-body {
+    background-color: #1a242e;
+    padding: 4rem 4rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile-inf{
+    position: relative;
+    flex: 3;
+}
+
+.profile-inf .edit-inf-button{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    
+}
+
+.white-text{
+    color: white;
+}
+
+#profile i {
+    color: #25daa5;
+}
+
+
+.profile-func {
+    margin: 0 4rem;
+    padding: 2rem 3rem 3.5rem;
+    border-left: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+
+.profile-func button {
+    font-size: 1.5rem;
+}
+
+.profile-inf h3 {
+    line-height: 1.4;
+    font-size: 2.5rem;
+}
+
+.profile-para {
+    font-size: 2rem;
+    line-height: 2;
+    flex: 1;
+}
+
+.profile-para h3 {
+    font-size: 2rem;
+    line-height: 2;
+}
+
+#on-sale {
+    padding: 0px 2rem 25px;
+    color: white;
+    line-height: 1.4;
+}
+
+#on-sale .item-para-main{
+    padding-top: 0;
+}
+
+
+/*----------------------Information modal ----------------------------------- */
+#inf-modal .modal-header{
+    background-color: #20282d;
+}
+
+#inf-modal .main-regis-form{
+    margin: 0;
+}
+
+
+
+/* ----- Edit info button -------- */
+.button-12 {
+    display: inline;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+    background: #6E6D70;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+    color: #DFDEDF;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-12:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+  }
+
+/*--------------- Withdraw button ---------------------*/
+  .button-42 {
+    background-color: #161b25;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    height: 44px;
+    line-height: 44px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 9;
+    border: 1px solid #00bd68;
+    font-size: 18px;
+    margin-top: 3rem;
+}
+
+.button-42:active,
+.button-42:hover {
+    outline: 0;
+}
+
+.button-42:hover {
+    background-color: #20413d;
+    border-color: rgba(0, 0, 0, 0.19);
+}

@@ -1,0 +1,57 @@
+/* ------------------ Registration --------------------- */
+
+#registration-form {
+    padding: 75px 2rem 25px;
+    color: white;
+    line-height: 1.4;
+    display: flex;
+    justify-content: center;
+}
+
+.main-regis-place{
+    width: 70%;
+}
+
+.main-regis-form{
+    background-color: #282f36;
+    border-radius: 5px;
+    margin: 5px 10%;
+}
+
+.regis-title{
+    text-align: center;
+    background-color: #20282d;
+    padding: 1px;
+}
+
+.regis-title .h2{
+    font-size: 2rem;
+}
+
+.regis-body{
+    margin: 0 10%;
+    padding: 1rem 0;
+}
+
+.required-inf{
+    padding: 5px 0;
+}
+.required-inf p{
+    color: #46be87;
+    font-size: 1.5rem;
+}
+
+.required-inf input{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #6f757f;
+}
+
+.regis-body .check-box{
+    padding: 1rem 0;
+}
+
+.required-inf input:focus {
+    outline: none;
+}
