@@ -137,6 +137,14 @@ html {
 .search-filter select:focus {
     outline: none;
 }
+
+.inventory-place .search-bar {
+    width: 40%;
+}
+
+.inventory-place .search-filter {
+    width: 15%;
+}
 /* ------------------------------------------------------------------------------ */
 
 
