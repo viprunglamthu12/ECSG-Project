@@ -1,9 +1,10 @@
 /*------profile---------- */
-#profile, #on-sale {
+#profile{
     padding: 75px 2rem 25px;
     color: white;
     line-height: 1.4;
 }
+
 .profile-body {
     background-color: #1a242e;
     padding: 4rem 4rem;
@@ -62,18 +63,22 @@
     line-height: 2;
 }
 
-#on-sale {
-    padding: 0px 2rem 25px;
+#on-sale, #pending {
+    padding: 25px 2rem;
     color: white;
     line-height: 1.4;
 }
 
-#on-sale .item-para-main{
+#on-sale .item-para-main,
+#pending .item-para-main
+{
     padding-top: 0;
 }
 
 
-/*----------------------Information modal ----------------------------------- */
+
+
+/*------------------------------Information modal ----------------------------------- */
 #inf-modal .modal-header{
     background-color: #20282d;
 }
@@ -83,7 +88,68 @@
 }
 
 
+/*-------------------------------Pending modal ----------------------------------- */
+#pending-modal .modal-header{
+    padding-bottom: 0;
+}
 
+#pending-modal .modal-body{
+    width: 80%;
+    margin: auto;
+}
+
+#pending-modal .modal-body .item{
+    padding: 15px;
+    background-color: #20282d;
+}
+#pending-modal .modal-body .item-name
+{
+    padding-top: 8px;
+}
+
+#pending-modal .modal-body .item-price{
+    padding-top: 12px;
+}
+
+
+#pending-modal .modal-body h3{
+    margin: 0;
+    font-size: 20px;
+}
+
+.modal-body .notice{
+  color: #c0c0c0;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.modal-body .notice .pos{
+    color:#e0990f;
+}
+
+.modal-body .notice .time{
+    color: white;
+    font-size: 16px;
+}
+
+#pending-modal .modal-footer{
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#pending-modal .modal-footer .send-btn,
+#pending-modal .modal-footer .confirm-btn{
+    padding-top: 0.5rem;
+}
+
+#pending-modal .modal-footer .confirm-btn{
+    width: 43%;
+}
+
+
+/* ---------------------------------------------------------------------------------- */
 /* ----- Edit info button -------- */
 .button-12 {
     display: inline;
@@ -143,4 +209,38 @@
 .button-42:hover {
     background-color: #20413d;
     border-color: rgba(0, 0, 0, 0.19);
+}
+
+/*--------------- Sent item button ---------------------*/
+
+.button-43 {
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #00D775, #00BD68);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #152b25;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    height: 44px;
+    line-height: 44px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 9;
+    border: 0;
+    font-size: 1.75rem;
+}
+
+.button-43:hover {
+    background: #00bd68;
 }

@@ -97,7 +97,9 @@
                     <h4 class="item-price"><i class="ti-money"></i> 123.86</h4>
                 </div>
             </div>
+        </div>
     </section>
+
 
     <section id="item-modal">
         <div class="container">
@@ -237,6 +239,87 @@
         </div>
     </section>
 
+
+
+    <!-- Pending Trades -->
+    <section id="pending">
+        <h1 class="pending-title">
+            <i class="ti-exchange-vertical title-i-color"></i> Pending Trades
+        </h1>
+        <div class="inventory-items">
+            <div data-toggle="modal" data-target="#pendingModal" role="button" class="item">
+                <img class="item-img card-img-top img-responsive" src="images/tmp.png" alt="">
+                <div class="item-para-top">
+                    <div class="category">
+                        StatTrak
+                    </div>
+                    <div class="exterior">
+                        Battle-Scarred
+                    </div>
+                </div>
+                <div class="item-para-main">
+                    <h4 class="item-name">Butterfly Knife Doppler</h4>
+                    <h4 class="item-price"><i class="ti-money"></i> 123.86</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="pending-modal">
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal anil" id="pendingModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title"> COMPLETE TRADE</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row item">
+                                <div class="col-md-4">
+                                    <img class="item-img img-responsive" src="images/tmp.png" alt="">
+                                </div>
+                                <div class="col-md-8">
+                                    <h3 class="item-name">Butterfly Knife Ganma Doppler</h3>
+                                    <div class="item-price">
+                                            <h3><i class="ti-money"></i> 8000</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notice">
+                                Select the <strong class="pos">#6</strong> copy of the item in your inventory
+                            </div>
+                            <div class="notice">
+                                You have <strong class="time">12:00:00</strong> to complete the trade
+                            </div>
+                        <div class="modal-footer">
+                            <div class="send-btn">
+                                <a href="#">
+                                    <button class="button-43" role="button">
+                                    <img src="images/steam-logo.png" alt="Steam Symbol"
+                                    style="width:20px;height:20px;">
+                                    <strong>Send Item Now</strong>
+                                </button></a>
+                                
+                            </div>
+                            <div class="confirm-btn">
+                                <form action="" method="post" class="max-width">
+                                    <input type="submit" value="purchase">
+                                    <label for="purchase" class="sub-div-center max-width">
+                                        <button class="button-41" role="button"><strong>Sent Confirmed</strong></button>
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

@@ -151,21 +151,19 @@ html {
 
 
 /* ---------------------------- Modal ------------------------------------------*/
-#item-modal .modal-content,
-#inf-modal .modal-content
+.modal-content
 {
     background-color: #282f36;
     color: white;
 }
 
-#item-modal .close,
-#inf-modal .close {
+.close {
     color: white;
     font-size: 3rem;
     padding: 12px;
 }
 
-#item-modal .modal-header{
+.modal-header{
     text-align: center;
 }
 
@@ -174,6 +172,7 @@ html {
 .modal-footer {
     border: none;
 }
+
 #item-modal .modal-footer{
     display: flex;
     justify-content: center;
@@ -347,6 +346,13 @@ html {
     .main-regis-place{
         width: 100%;
         text-align: justify;
+    }
+
+    #pending-modal .modal-footer{
+        display: block;
+    }
+    #pending-modal .modal-footer .confirm-btn{
+        width: 100%;
     }
 }
 
