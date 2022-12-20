@@ -60,13 +60,18 @@
                         style="width:25px;height:25px;"> Steam ID: 76561199174734846</h4>
                 <h3 class="user-balance">Balance: <i class="ti-money"> </i> 8000</h3>
                 <div class="edit-inf-button">
-                    <button class="button-12" role="button" data-toggle="modal" data-target="#infModal"><i class="ti-pencil"></i> Edit information</button>
+                    <button class="button-12" role="button" data-toggle="modal" data-target="#infModal"><i
+                            class="ti-pencil"></i> Edit information</button>
                 </div>
             </div>
             <div class="profile-func">
-                <button class="button-41" role="button"><i class="ti-money" style="color: white;"></i> Refill
-                    Balance</button>
-                <button class="button-42" role="button"><i class="ti-wallet"></i> Withdraw Money</button>
+                <button class="button-41" data-toggle="modal" data-target="#refillModal" role="button">
+                    <i class="ti-money" style="color: white;">
+                    </i> Refill Balance
+                </button>
+                <button class="button-42" role="button" data-toggle="modal" data-target="#withdrawModal">
+                    <i class="ti-wallet"></i> Withdraw Money
+                </button>
             </div>
             <div class="profile-para">
                 <h3><i class="ti-download"></i> Withdraw: <i class="ti-money"></i> 8000</h3>
@@ -75,6 +80,51 @@
             </div>
         </div>
     </section>
+
+    <!-- Trades History -->
+    <section id="trades-his">
+        <h1 class="trades-his-title">
+            <i class="ti-list title-i-color"></i> Transactions History
+        </h1>
+        <table class="trades-his-table">
+            <tr>
+                <th class="date">Date</th>
+                <th class="item">Item</th>
+                <th class="payment-type">Payment Type</th>
+                <th class="money">Money</th>
+                <th class="transactions">Transaction</th>
+            </tr>
+            <tr>
+                <td>20/12/2020, 9:46 AM</td>
+                <td>Butterfly Knife Ganma Doppler</td>
+                <td>Sell</td>
+                <td>$8000</td>
+                <td>123456</td>
+            </tr>
+            <tr>
+                <td>20/12/2020, 9:46 AM</td>
+                <td>Butterfly Knife Ganma Doppler</td>
+                <td>Buy</td>
+                <td>$8000</td>
+                <td>123456</td>
+            </tr>
+            <tr>
+                <td>20/12/2020, 9:46 AM</td>
+                <td></td>
+                <td>Deposit</td>
+                <td>$8000</td>
+                <td>123456</td>
+            </tr>
+            <tr>
+                <td>20/12/2020, 9:46 AM</td>
+                <td></td>
+                <td>Withdraw</td>
+                <td>$8000</td>
+                <td>123456</td>
+            </tr>
+        </table>
+    </section>
+
 
     <!-- On sale -->
     <section id="on-sale">
@@ -199,8 +249,8 @@
                                                 href="https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url">Get
                                                 it here</a>
                                         </div>
-                                        <input class="text" type="text" name="tradeURL"
-                                            placeholder="User Trade URL" required="">
+                                        <input class="text" type="text" name="tradeURL" placeholder="User Trade URL"
+                                            required="">
                                     </div>
                                     <div class="required-inf">
                                         <p>
@@ -223,8 +273,15 @@
                                         <input class="text email" type="email" name="email" placeholder="User E-mail"
                                             required="">
                                     </div>
+                                    <div class="required-inf">
+                                        <p>
+                                            PayPal Email
+                                        </p>
+                                        <input class="text" type="email" name="paypalEmail"
+                                            placeholder="User PayPal Email" required="">
+                                    </div>
                                 </div>
-                            
+
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -234,7 +291,7 @@
                         </label>
                     </div>
                 </div>
-            </form>
+                </form>
             </div>
         </div>
     </section>
@@ -285,7 +342,7 @@
                                 <div class="col-md-8">
                                     <h3 class="item-name">Butterfly Knife Ganma Doppler</h3>
                                     <div class="item-price">
-                                            <h3><i class="ti-money"></i> 8000</h3>
+                                        <h3><i class="ti-money"></i> 8000</h3>
                                     </div>
                                 </div>
                             </div>
@@ -295,31 +352,107 @@
                             <div class="notice">
                                 You have <strong class="time">12:00:00</strong> to complete the trade
                             </div>
-                        <div class="modal-footer">
-                            <div class="send-btn">
-                                <a href="#">
-                                    <button class="button-43" role="button">
-                                    <img src="images/steam-logo.png" alt="Steam Symbol"
-                                    style="width:20px;height:20px;">
-                                    <strong>Send Item Now</strong>
-                                </button></a>
-                                
-                            </div>
-                            <div class="confirm-btn">
-                                <form action="" method="post" class="max-width">
-                                    <input type="submit" value="purchase">
-                                    <label for="purchase" class="sub-div-center max-width">
-                                        <button class="button-41" role="button"><strong>Sent Confirmed</strong></button>
-                                    </label>
-                                </form>
+                            <div class="modal-footer">
+                                <div class="send-btn">
+                                    <a href="#">
+                                        <button class="button-43" role="button">
+                                            <img src="images/steam-logo.png" alt="Steam Symbol"
+                                                style="width:20px;height:20px;">
+                                            <strong>Send Item Now</strong>
+                                        </button></a>
+
+                                </div>
+                                <div class="confirm-btn">
+                                    <form action="" method="post" class="max-width">
+                                        <input type="submit" value="purchase">
+                                        <label for="purchase" class="sub-div-center max-width">
+                                            <button class="button-41" role="button"><strong>Sent
+                                                    Confirmed</strong></button>
+                                        </label>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+    </section>
 
+    <!-- --------------------Payment Modals-------------- -->
+    <section class="payment-modal">
+        <!-- Refill modal -->
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal anil" id="refillModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title"> Refill Balance</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="paypal-logo">
+                                <img src="images/PayPal-Logo.png" alt="PayPal Logo" width="200px">
+                            </div>
+                            <form action="" method="post">
+                                <div class="amount">
+                                    <p>Refill amount</p>
+                                    <div class="sub-div-bettween">
+                                        <i class="ti-money title-i-color" style="padding-top: 4px;"></i>
+                                        <input type="number" name="refillAmount" value="1" min="1" step="0.01" required="">
+                                    </div>
+
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" value="refill">
+                            <label for="purchase" class="sub-div-center max-width">
+                                <button class="button-41" role="button"><strong>Pay Now</strong></button>
+                            </label>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal anil" id="withdrawModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title"> Withdraw Money</h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="paypal-logo">
+                                <img src="images/PayPal-Logo.png" alt="PayPal Logo" width="200px">
+                            </div>
+                            <form action="" method="post">
+                                <div class="amount">
+                                    <p>Enter amount</p>
+                                    <div class="sub-div-bettween">
+                                        <i class="ti-money title-i-color" style="padding-top: 4px;"></i>
+                                        <input type="number" name="withdrawAmount" value="1" min="1" step="0.01" required="">
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" value="withdraw">
+                            <label for="purchase" class="sub-div-center max-width">
+                                <button class="button-41" role="button"><strong>Withdraw Money</strong></button>
+                            </label>
+                        </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 </body>
+
+
 
 </html>

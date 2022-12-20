@@ -63,7 +63,7 @@
     line-height: 2;
 }
 
-#on-sale, #pending {
+#on-sale{
     padding: 25px 2rem;
     color: white;
     line-height: 1.4;
@@ -89,6 +89,12 @@
 
 
 /*-------------------------------Pending modal ----------------------------------- */
+#pending {
+    padding: 25px 2rem;
+    color: white;
+    line-height: 1.4;
+}
+
 #pending-modal .modal-header{
     padding-bottom: 0;
 }
@@ -148,6 +154,77 @@
     width: 43%;
 }
 
+
+
+/* -------------------------------Trade History---------------------------------------- */
+#trades-his {
+    padding: 25px 2rem;
+    color: white;
+    line-height: 1.4;
+}
+
+.trades-his-table{
+    margin: 3rem 2rem;
+    width: 100%;
+}
+.trades-his-table tr{
+    line-height: 1.6;
+}
+.trades-his-table tr:nth-child(even){
+    background-color: #1a242e;
+}
+.trades-his-table th{
+    color: #737983;
+}
+
+.trades-his-table td{
+    color: #c0c0c0;
+}
+
+.trades-his-table .item{
+    width: 30%;
+}
+
+.trades-his-table .date{
+    width: 20%;
+}
+
+.trades-his-table .money,
+.trades-his-table .payment-type{
+    width: 15%;
+}
+
+/* ----------------------Payment Modal------------------------------------------ */
+.payment-modal .modal-header{
+
+    padding-bottom: 0;
+}
+
+.payment-modal .modal-body{
+
+    padding-top: 0;
+}
+
+.modal-body .paypal-logo{
+    display: flex;
+    justify-content: center;
+    background-color: #393f47;
+}
+
+.payment-modal .modal-body .amount{
+    margin: 8px 12px 0;
+    color: #00D775;
+}
+
+.modal-body .amount input[type = "number"]{
+    width: 100%;
+    border-bottom: 1px solid #353b43;
+    color: white;
+}
+
+.modal-body .amount input[type = "number"]:focus{
+    outline: none;
+}
 
 /* ---------------------------------------------------------------------------------- */
 /* ----- Edit info button -------- */
