@@ -194,7 +194,29 @@
     width: 15%;
 }
 
-/* ----------------------Payment Modal------------------------------------------ */
+/* ---------------------------Payment Modal------------------------------------------ */
+.modal-content
+{
+    background-color: #282f36;
+    color: white;
+}
+
+.close {
+    color: white;
+    font-size: 3rem;
+    padding: 12px;
+}
+
+.modal-header{
+    text-align: center;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    border: none;
+}
+
 .payment-modal .modal-header{
 
     padding-bottom: 0;
