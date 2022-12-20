@@ -218,6 +218,7 @@
                     </div>
                 </div>
             </form>
+
             <div class="market-products">
                 <div class="item-slot card p-2">
                     <div class="item-float">
@@ -382,15 +383,55 @@
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
     </section>
 
-    
+    <!-- Notice modal -->
+    <section id="notice-modal">
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal anil" id="lackOfMoneyModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="body-img">
+                                <img src="images/warning.svg" alt="Warning symbol">
+                            </div>  
+                            <h2>Purchase isn't posible</h2>
+                            <p>Not enough money on balance. You need to refill your balance to buy this item.</p>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal anil" id="confirmModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="body-img">
+                                <img src="images/check-circle.png" alt="Confirm symbol" width="60px">
+                            </div>  
+                            <h2>Waiting for seller's confirmation</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="javascripts/market.js"></script>
     <script>screenSize();</script>
 </body>

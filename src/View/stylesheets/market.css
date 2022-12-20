@@ -189,3 +189,45 @@ input[type="range"] {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+
+  /* ----------------------------------- Notice modal -------------------------------- */
+  .modal-content
+{
+    background-color: #282f36;
+    color: white;
+}
+
+.close {
+    color: white;
+    font-size: 3rem;
+    padding: 12px;
+}
+
+.modal-header{
+    text-align: center;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    border: none;
+}
+
+#notice-modal .body-img{
+    display: flex;
+    justify-content: center;
+}
+
+#notice-modal .modal-body{
+    text-align: center;
+}
+
+#notice-modal .modal-body h2{
+    font-weight: 700;
+}
+
+#notice-modal .modal-body p{
+    font-size: 16px;
+    color: #6E6D70;
+}
