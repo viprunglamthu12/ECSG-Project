@@ -1,0 +1,60 @@
+ <section id="registration-form">
+        <div class="main-regis-place">
+            <h4>
+                Please filll in necessary information below to establish connection from our server to your steam
+                account.
+                <br>Your information will be absolutely secure according to our Terms & Policy.
+            </h4>
+            <div class="main-regis-form">
+                <div class="regis-title">
+                    <h2><img src="/images/steam-icon-2.png" alt="Steam Symbol" style="width:3rem;height:3rem;"> Steam
+                        Information</h2>
+                </div>
+                <form action="/user/regist" method="post">
+                    <div class="regis-body">
+                        <div class="required-inf">
+                            <div class="sub-div-bettween">
+                                <p>
+                                    Steam Trade URL 
+                                </p>
+                                <a href="https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url" target="_blank">Get it here</a>
+                            </div>
+                            <input class="text" type="text" name="tradeURL" placeholder="Your steam Trade URL"
+                                required="">
+                        </div>
+                        <div class="required-inf">
+                            <div class="sub-div-bettween">
+                                <p>
+                                    API Key 
+                                </p>
+                                <a href="https://steamcommunity.com/dev/apikey" target="_blank">Get it here</a>
+                            </div>
+                            
+                            <input class="text" type="text" name="apiKey" placeholder="Your steam API Key" required="">
+                        </div>
+                        <div class="required-inf">
+                            <p>
+                                E-mail
+                            </p>
+                            <input class="text email" type="email" name="email" placeholder="Your E-mail" required="">
+                        </div>
+                        <div class="check-box">
+                            <div>
+                                <input type="checkbox" class="term1" required="">
+                                <label for="term1">Your trade will be automatically created through our server.</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" class="term2" required="">
+                                <label for="term2">Incoming trade offers results of your buy order will be automatically
+                                    received.</label>
+                            </div>
+                        </div>
+                        <input type="submit" value="signup">
+                        <label for="signup" class="sub-div-center max-width" >
+                            <button class="button-41" role="button" style="width:50%">Submit</button>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>

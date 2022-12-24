@@ -1,0 +1,503 @@
+<link rel="stylesheet" href="/css/profile.css">
+
+<!-- Profile -->
+<section id="profile">
+    <h1 class="profile-title">
+        <i class="ti-user"></i> PROFILE
+    </h1>
+    <div class="profile-body">
+        <div class="profile-inf">
+            <h3 class="user-name">{{user.personaname}}</h3>
+            <h4 class="user-steam-id"><img src="/images/steam-icon-2.png" alt="Steam Symbol"
+                    style="width:25px;height:25px;"> Steam ID: {{user.steamid}}</h4>
+            <h3 class="user-balance">Balance: <i class="ti-money"> </i> {{info.money}}</h3>
+            <div class="edit-inf-button">
+                <button class="button-12" role="button" data-toggle="modal" data-target="#infModal"><i
+                        class="ti-pencil"></i> Edit information</button>
+            </div>
+        </div>
+       <div class="profile-func">
+                <button class="button-41" data-toggle="modal" data-target="#refillModal" role="button">
+                    <i class="ti-money" style="color: white;">
+                    </i> Refill Balance
+                </button>
+                <button class="button-42" role="button" data-toggle="modal" data-target="#withdrawModal">
+                    <i class="ti-wallet"></i> Withdraw Money
+                </button>
+            </div>
+            <div class="profile-para">
+                <h3><i class="ti-download"></i> Withdraw: <i class="ti-money"></i> 8000</h3>
+                <h3><i class="ti-check-box"></i> Sold: <i class="ti-money"></i> 8000</h3>
+                <h3><i class="ti-stats-up"></i> Trades: 123</h3>
+            </div>
+    </div>
+</section>
+ <!-- Trades History -->
+<section id="trades-his">
+        <h1 class="trades-his-title">
+            <i class="ti-list title-i-color"></i> Transactions History
+        </h1>
+        <table class="trades-his-table">
+            <tr>
+                <th class="date">Date</th>
+                <th class="item">Item</th>
+                <th class="payment-type">Payment Type</th>
+                <th class="money">Money</th>
+                <th class="status">Status</th>
+            </tr>
+            {{#each tradeHistory}}
+            <tr>
+                <td>{{updatedAt}}</td>
+                <td>{{name}}</td>
+                <td>{{type}}</td>
+                <td>${{price}}</td>
+                <td>{{status}}</td>
+            </tr>
+             {{/each}}
+
+        </table>
+    </section>
+
+<!-- On sale -->
+<section id="on-sale">
+    <h1 class="on-sale-title">
+        <img src="/images/on_sale_icon.svg" alt="inventory-icon" style="width: 35px;"> On Sale
+    </h1>
+
+    <div class="inventory-items">
+        {{#each info.itemSells}}
+        <div data-toggle="modal" data-target="#itemModal{{getAssetid}}" role="button" class="item"
+            id="sellItem{{getAssetid}}">
+            <img class="item-img card-img-top img-responsive" src="{{getImg}}" alt="">
+            <div class="item-para-top">
+                <div class="category">
+                    {{getQuality}}
+                </div>
+                <div class="exterior">
+                    {{getExterior}}
+                </div>
+            </div>
+            <div class="item-para-main">
+                <h4 class="item-name">{{getName}}</h4>
+                <h4 class="item-price"><i class="ti-money"></i> {{getPrice}}</h4>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</section>
+
+<section id="item-modal">
+    {{#each info.itemSells}}
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal anil" id="itemModal{{getAssetid}}" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title"><i class="title-i-color ti-comment-alt"></i> Information</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img class="item-img img-responsive" src="{{getImg}}" alt="">
+                            </div>
+                            <div class="item-modal-infor col-md-7 ml-auto">
+                                <h1 class="item-name">{{getName}}</h1>
+                                <div class="price">
+                                    <div class="item-price">
+                                        <div style="color: #737983;font-size: 16px;padding-top: 1.25rem;">
+                                            <p>
+                                                Your price:
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <i class="ti-money">{{getPrice}}</i>
+                                        </div>
+                                    </div>
+                                    <div class="item-suggested-price">
+                                        <div style="color: #737983;">Suggested price:</div>
+                                        <i class="ti-money title-i-color"></i>
+                                    </div>
+                                </div>
+                                <div class="float">
+                                    <div>Float:</div>
+                                    <div class="item-float"></div>
+                                </div>
+                                <div class="type">
+                                    <div>Type:</div>
+                                    <div class="item-type">{{getCategory}}</div>
+                                </div>
+                                <div class="category">
+                                    <div>Quality:</div>
+                                    <div class="item-category">{{getQuality}}</div>
+                                </div>
+                                <div class="rarity">
+                                    <div>Rarity:</div>
+                                    <div class="item-category">{{getRarity}}</div>
+                                </div>
+                                <div class="exterior">
+                                    <div>Exterior:</div>
+                                    <div class="item-exterior">{{getExterior}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <form id="remove{{getAssetid}}" class="max-width">
+                            <input type="submit">
+                            <label for="purchase" class="sub-div-center max-width">
+                                <button class="button-41" style="background-color: red;"
+                                    role="button"><strong>REMOVE</strong></button>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</section>
+{{#each info.itemSells}}
+<script>
+    $('#remove{{getAssetid}}').submit((e) => {
+        e.preventDefault();
+        $.ajax({
+            type: 'DELETE',
+            url: '/market/{{assetid}}',
+
+            success: function (result) {
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": true,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "showDuration": "300",
+                    "hideDuration": "1000000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                toastr["success"](result);
+                $('#itemModal{{getAssetid}}').modal('toggle');
+                $('#sellItem{{assetid}}').remove();
+
+                $('#itemModal{{getAssetid}}').remove();
+            }, error: function (result) {
+                console.log(result)
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": true,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "showDuration": "300",
+                    "hideDuration": "1000000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                toastr["warning"](result, "Delete sell item Fail");
+            }
+        })
+    })
+</script>
+{{/each}}
+
+<section id="inf-modal">
+    <form class="modal fade" id="infModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="regis-title">
+                        <h2><img src="/images/steam-icon-2.png" alt="Steam Symbol" style="width:3rem;height:3rem;">
+                            Steam
+                            Information</h2>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="main-regis-form">
+                        <div action="#" method="post">
+                            <div class="regis-body">
+                                <div class="required-inf">
+                                    <div class="sub-div-bettween">
+                                        <p>
+                                            Steam Trade URL
+                                        </p>
+                                        <a target='_blank'
+                                            href="https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url">Get
+                                            it here</a>
+                                    </div>
+                                    <input class="text" type="text" name="tradeURL" placeholder="User Trade URL"
+                                        required="" value="{{info.tradeURL}}">
+                                </div>
+                                <div class="required-inf">
+                                    <p>
+                                        API Key
+                                    </p>
+                                    <input class="text" type="text" name="apiKey" placeholder="User API Key" required=""
+                                        value="{{info.apiKey}}">
+                                </div>
+                                <div class="required-inf">
+                                    <p>
+                                        E-mail
+                                    </p>
+                                    <input class="text email" type="email" name="email" placeholder="User E-mail"
+                                        required="" value="{{info.email}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="saveInf">
+                    <label for="saveInf" class="sub-div-center max-width">
+                        <button class="button-41" role="button" style="width:50%">Save</button>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
+<!-- Pending Trades -->
+<section id="pending">
+    <h1 class="pending-title">
+        <i class="ti-exchange-vertical title-i-color"></i> Pending Trades
+    </h1>
+    <div class="inventory-items">
+        {{#each info.itemSending}}
+        <div data-toggle="modal" data-target="#pendingModal{{_id}}" role="button" class="item" name="pending-item{{_id}}">
+            <img class="item-img card-img-top img-responsive" src="{{getImg}}" alt="">
+            <div class="item-para-top">
+                <div class="category">
+                    {{getQuality}}
+                </div>
+                <div class="exterior">
+                    {{getExterior}}
+                </div>
+            </div>
+            <div class="item-para-main">
+                <h4 class="item-name">{{getName}}</h4>
+                <h4 class="item-price"><i class="ti-money"></i> {{getPrice}}</h4>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>
+
+
+<section id="pending-modal">
+    {{#each info.itemSending}}
+    <div class="container" >
+        <!-- Modal -->
+        <div class="modal anil" id="pendingModal{{_id}}" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content" style="background-color: #282f36;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title"> COMPLETE TRADE</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row item">
+                            <div class="col-md-4">
+                                <img class="item-img img-responsive" src="{{getImg}}" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h3 class="item-name">{{getName}}</h3>
+                                <div class="item-price">
+                                    <h3><i class="ti-money"></i> {{getPrice}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notice">
+                            Select the item in page <strong class="pos">{{page}}</strong> position <strong
+                                class="pos">{{index}}</strong> in your CSGO inventory
+                        </div>
+                        <div class="notice">
+                            You have <strong class="time">12h</strong> to complete the trade
+                        </div>
+                        <div class="modal-footer">
+                            <div class="send-btn">
+                                <a href="{{url}}" target="_blank">
+                                    <button class="button-43" role="button">
+                                        <img src="/images/steam-logo.png" alt="Steam Symbol"
+                                            style="width:20px;height:20px;">
+                                        <strong>Send Item Now</strong>
+                                    </button></a>
+
+                            </div>
+                            <div class="confirm-btn">
+                                <form id = "sentConfirm{{_id}}" class="max-width">
+                                    <input type="submit" value="purchase">
+                                    <label for="purchase" class="sub-div-center max-width">
+                                        <button class="button-41" role="button"><strong>Sent Confirmed</strong></button>
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {{/each}}
+</section>
+
+<!----------------------Payment Modals-------------- -->
+<section class="payment-modal">
+    <!-- Refill modal -->
+    <div class="container">
+        <!-- Modal -->
+        <form class="modal anil" id="refillModal" role="dialog" action="/payment/pay" method="post">
+            <div class="modal-dialog modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content" style="background-color: #282f36;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title"> Refill Balance</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="paypal-logo">
+                            <img src="/images/PayPal-Logo.png" alt="PayPal Logo" width="200px">
+                        </div>
+                        <div >
+                            <div class="amount">
+                                <p>Refill amount</p>
+                                <div class="sub-div-bettween">
+                                    <i class="ti-money title-i-color" style="padding-top: 4px;"></i>
+                                    <input type="number" name="refillAmount" min="1" step="0.01" required="">
+                                </div>
+
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="refill">
+                        <label for="purchase" class="sub-div-center max-width">
+                            <button class="button-41" role="button"><strong>Pay Now</strong></button>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <!-- Modal -->
+        <form class="modal anil" id="withdrawModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title"> Withdraw Money</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="paypal-logo">
+                            <img src="/images/PayPal-Logo.png" alt="PayPal Logo" width="200px">
+                        </div>
+                        <div action="" method="post">
+                            <div class="amount">
+                                <p>Enter amount</p>
+                                <div class="sub-div-bettween">
+                                    <i class="ti-money title-i-color" style="padding-top: 4px;"></i>
+                                    <input type="number" name="withdrawAmount" min="1" step="0.01" required="">
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="withdraw">
+                        <label for="purchase" class="sub-div-center max-width">
+                            <button class="button-41" role="button" ><strong>Withdraw Money</strong></button>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+
+<script>
+    $('#infModal').submit((e) => {
+        e.preventDefault();
+        $.ajax({
+            type: 'PATCH',
+            url: '/user/profile',
+            data: $('#infModal').serialize(),
+            success: function (result) {
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": true,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "showDuration": "300",
+                    "hideDuration": "1000000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                toastr["success"](result);
+            }, error: function (result) {
+                console.log(result)
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": true,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "showDuration": "300",
+                    "hideDuration": "1000000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                toastr["warning"](result, "Update info Fail");
+            }
+        })
+    })
+</script>
+
+ {{#each info.itemSending}}
+    <script>
+        $("#sentConfirm{{_id}}").submit((e)=>{
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url:'/market/checkSentItem/{{_id}}',
+                success: function(result){
+                    showToast(result);
+                    $('#pendingModal{{_id}}').modal('toggle');
+                    $('#pending-item{{_id}}').remove();
+                },error: function(result){
+                    showToast(result);
+                }
+            })
+        })
+    </script>
+ {{/each}}

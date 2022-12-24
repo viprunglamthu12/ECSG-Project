@@ -13,3 +13,7 @@ function controlReceiveToPrice() {
     yourPrice.value = youReceive.value * 1.02;
 
 }
+
+$('#yourPrice').on('input', controlPriceToReceive)
+$('#youReceive').on('input', controlPriceToReceive)
+

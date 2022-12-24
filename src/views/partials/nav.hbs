@@ -1,0 +1,53 @@
+<section id="nav-bar">
+  <nav id="nav" class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><strong><img src="/images/E-icon.png" alt="E-commerce Symbol"
+              style="width:32px;height:32px;">- commerce CSGO</strong></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li id="navhome"><a href="/">Home</a></li>
+          <li id="navmarket"><a href="/market">Market</a></li>
+          <li id="navsupport"><a href="#">Support</a></li>
+          <li id="navblog"><a href="/blog">Blog</a></li>
+          {{#if isLogin}}
+          <li>
+            <a class="dropdown-toggle" style="padding: 9px;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
+              <img src="{{user.avatar}}" style="width: 32px;"> <i class="ti-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/user/inventory">
+                  <img src="/images/user.svg" style="width:18px; height:18px;"> Inventory
+                </a>
+              </li>
+              <div class="dropdown-divider"></div>
+              <li><a class="dropdown-item" href="/user/profile">
+                  <img src="/images/user.svg" style="width:18px; height:18px;"> Profile
+                </a>
+              </li>
+              <div class="dropdown-divider"></div>
+              <li><a class="dropdown-item" href="/user/logout">
+                  <img src="/images/log-out.svg"> Log out
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+
+          {{else}}
+          <li><a href="/auth/steam"><img src="images/steam-logo.png" alt="Steam Symbol" style="width:20px;height:20px;">
+              Sign
+              Up/Log in</a></li>
+          {{/if}}
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>

@@ -1,0 +1,203 @@
+<section id="inventory">
+    <h1 class="inventory-title">
+        <img src="/images/sell_inventory_icon.svg" alt="inventory-icon" style="width: 35px;"> Inventory
+    </h1>
+    <div class="inventory-place">
+        <form action="/user/inventory" method="get">
+            <div class="search-section">
+                <div class="search-bar">
+                    <i class="ti-search"> </i>
+                    <input type="text" name="search" value="{{search}}" placeholder="Search">
+                </div>
+                
+            </div>
+        </form>
+        {{#if error}}
+        <p>{{error}}</p>
+        {{/if}}
+        <div class="inventory-items">
+            {{#each inventory}}
+            <div class="item" data-toggle="modal" data-target="#itemModal{{assetid}}" role="button">
+                <img class="item-img card-img-top img-responsive" src="{{getImg}}" alt="{{assetid}}">
+                <div class="item-para-top">
+                    <div class="category">
+                        {{getQuality}}
+                    </div>
+                    <div class="exterior">
+                        {{getExterior}}
+                    </div>
+                </div>
+                <div class="item-para-bottom">
+                    Float:
+                </div>
+                <div class="item-para-main">
+                    <h4 class="item-name ">{{name}}</h4>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+<section id="item-modal">
+    {{#each inventory}}
+    <div class="container">
+        <!-- Modal -->
+        <form class="modal anil" id="itemModal{{assetid}}" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title"><i class="title-i-color ti-comment-alt"></i> Information</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img class="item-img img-responsive" src="{{getImg}}" alt="{{assetid}}">
+                            </div>
+                            <div class="item-modal-infor col-md-7 ml-auto">
+                                <h1 class="item-name">{{name}}</h1>
+                                <div class="price">
+                                    <div style="color: #737983;">Suggested price:</div>
+                                    <div>
+                                        <i class="ti-money title-i-color"></i>
+                                    </div>
+                                </div>
+                                <div class="float">
+                                    <div>Float:</div>
+                                    <div class="item-float"></div>
+                                </div>
+                                <div class="type">
+                                    <div>Type:</div>
+                                    <div class="item-type">{{getType}}</div>
+                                </div>
+                                <div class="category">
+                                    <div>Category:</div>
+                                    <div class="item-category">{{getCategory}}</div>
+                                </div>
+                                <div class="rarity">
+                                    <div>Rarity:</div>
+                                    <div class="item-category">{{getQuality}}</div>
+                                </div>
+                                <div class="exterior">
+                                    <div>Exterior:</div>
+                                    <div class="item-exterior">{{getExterior}}</div>
+                                </div>
+                                <div style="padding-top: 2rem;">
+
+                                </div>
+                                <div>
+                                    <div class="form_control">
+                                        <div class="form_control_container">
+                                            <div class="form_control_container_price">
+                                                Your price <i class="ti-money title-i-color"></i>
+                                            </div>
+                                            <input class="form_control_container_price_input" type="number"
+                                                id="yourPrice{{assetid}}" value="0" min="0" step="0.01"
+                                                 name="price" required />
+                                        </div>
+                                        <div class="form_control_container">
+                                            <div class="form_control_container_price">
+                                                You receive <i class="ti-money title-i-color"></i>
+                                            </div>
+                                            <input class="form_control_container_price_input" type="number"
+                                                id="youReceive{{assetid}}" value="0" min="0" step="0.01"
+                                                 />
+                                        </div>
+                                        <div class="form_control_container">
+                                            <div class="form_control_container_price">
+                                                Discount
+                                            </div>
+                                            <div class="discount-container">
+                                                2%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" value="purchase">
+                            <label for="purchase" class="sub-div-center max-width">
+                                <button class="button-41" role="button">
+                                    <strong>SELL ITEM</strong>
+                                </button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    {{/each}}
+</section>
+
+
+
+
+<script type="text/javascript" src="/js/inventory.js"></script>
+
+{{#each inventory}}
+<script>
+    $("#itemModal{{assetid}}").submit((e) => {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/market/sell/{{assetid}}',
+            data: $("#itemModal{{assetid}}").serialize(),
+            success: function (result) {
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": true,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "showDuration": "300",
+                    "hideDuration": "1000000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                toastr["success"](result);
+            },
+            error: function (result) {
+                console.log(result)
+                toastr.options = {
+                    "closeButton": true,
+                    "debug": true,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "showDuration": "300",
+                    "hideDuration": "1000000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                toastr["warning"](result.responseJSON.message,"Sell Fail" );
+                
+            },
+
+        })
+    })
+
+    $("#yourPrice{{assetid}}").change(()=>{
+        $("#youReceive{{assetid}}").val($("#yourPrice{{assetid}}").val()*0.98)
+    })
+
+    $("#youReceive{{assetid}}").change(()=>{
+        $("#yourPrice{{assetid}}").val($("#youReceive{{assetid}}").val()*1.02)
+    })
+
+
+</script>
+{{/each}}
