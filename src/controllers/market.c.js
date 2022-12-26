@@ -15,10 +15,11 @@ const getUserSellItem = async (steamid)=>{
 
 
 
+
 exports.getMarket = async(req,res,next)=>{
     const match ={
         exterior : ['Factory New',"Minimal Wear","Field-Tested","Well-Worn","Battle-Scarred",undefined],
-        quality: ["Normal","StatTrak","Souvenir",undefined],
+        quality: ["Normal","StatTrak™","Souvenir",undefined],
         rarity: [undefined,"Consumer Grade","Mil-Spec Grade","Industrial Grade","Restricted","Classified","Covert","Distinguished","Exceptional","Superior","Master","Base Grade","Extraordinary","High Grade","Remarkable","Exotic","Contraband"],
         category: [undefined,"Knive","Glove","Rifle","Sniper Rifle","Pistol","SMG","Shotgun","Machinegun","Container","Graffiti"],
         search: "",
