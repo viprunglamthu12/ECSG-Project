@@ -1,203 +1,218 @@
 <section id="market">
-    <!-- market filter -->
-    <button id="filter-btn" onclick="filterButton()"><i class="ti-menu-alt"></i> Filters</button>
-    <div class="filter col-md-3" id="filter">
-        <h3 class="filter-title"> <i class="ti-shopping-cart"></i> Marketplace</h3>
-        <div class="filter-title-row">
-            <p><i class="ti-menu-alt"></i> Filters</p>
-            <a href="#" class="reset"><i class="ti-reload"></i> Reset</a>
-        </div>
-        <div class="filter-content">
-            <form action="/market" method="get" id="filterForm">
-                <div class="price">
-                    <h4 class="filter-subtitle">Price <i class="ti-money"></i></h4>
+    <div class="market-container">
+        <!-- market filter -->
+        <button id="filter-btn" onclick="filterButton()"><i class="ti-menu-alt"></i> Filters</button>
+        <div class="filter col-md-3" id="filter">
+            <h3 class="filter-title"> <i class="ti-shopping-cart"></i> Marketplace</h3>
+            <div class="filter-title-row">
+                <p><i class="ti-menu-alt"></i> Filters</p>
+                <a href="#" class="reset"><i class="ti-reload"></i> Reset</a>
+            </div>
+            <div class="filter-content">
+                <form action="/market" method="get" id="filterForm">
+                    <div class="price">
+                        <h4 class="filter-subtitle">Price <i class="ti-money"></i></h4>
+                        <div class="filter-range">
+                            <div class="range_container">
+                                <div class="sliders_control">
+                                    <input id="priceFromSlider" type="range" value="0" min="0" max="21999"
+                                        onchange="javascript:this.form.submit()" />
+                                    <input id="priceToSlider" type="range" value="21999" min="0" max="21999" />
+                                </div>
+                                <div class="form_control">
+                                    <div class="form_control_container">
+                                        <div class="form_control_container__time">Min</div>
+                                        <input class="form_control_container__time__input" type="number"
+                                            id="priceFromInput" value="0" min="0" max="21999" name="minPrice" />
+                                    </div>
+                                    <div class="form_control_container">
+                                        <div class="form_control_container__time">Max</div>
+                                        <input class="form_control_container__time__input" type="number"
+                                            id="priceToInput" value="21999" min="0" max="21999" name="maxPrice" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="filter-subtitle">Exterior <i class="ti-star"></i></h4>
+                    <input type="checkbox" name="exterior" value="Factory New">
+                    <label for="Factory New">Factory New</label><br>
+                    <input type="checkbox" name="exterior" value="Minimal Wear">
+                    <label for="MinimalWear">Minimal Wear</label><br>
+                    <input type="checkbox" name="exterior" value="Field-Tested">
+                    <label for="Field-Tested">Field-Tested</label><br>
+                    <input type="checkbox" name="exterior" value="Well-Worn">
+                    <label for="Well-Worn">Well-Worn</label><br>
+                    <input type="checkbox" name="exterior" value="Battle-Scarred">
+                    <label for="Battle-Scarred">Battle-Scarred</label><br>
+
+                    <h4 class="filter-subtitle">Float</i></h4>
                     <div class="filter-range">
                         <div class="range_container">
                             <div class="sliders_control">
-                                <input id="priceFromSlider" type="range" value="0" min="0" max="21999" onchange="javascript:this.form.submit()"/>
-                                <input id="priceToSlider" type="range" value="21999" min="0" max="21999" />
+                                <input id="floatFromSlider" type="range" value="0" min="0" max="1" step="0.00001" />
+                                <input id="floatToSlider" type="range" value="1" min="0" max="1" step="0.00001" />
                             </div>
                             <div class="form_control">
                                 <div class="form_control_container">
                                     <div class="form_control_container__time">Min</div>
-                                    <input class="form_control_container__time__input" type="number" id="priceFromInput"
-                                        value="0" min="0" max="21999" name="minPrice" />
+                                    <input class="form_control_container__time__input" type="number" id="floatFromInput"
+                                        value="0" min="0" max="1" />
                                 </div>
                                 <div class="form_control_container">
                                     <div class="form_control_container__time">Max</div>
-                                    <input class="form_control_container__time__input" type="number" id="priceToInput"
-                                        value="21999" min="0" max="21999" name="maxPrice" />
+                                    <input class="form_control_container__time__input" type="number" id="floatToInput"
+                                        value="1" min="0" max="1" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <h4 class="filter-subtitle">Exterior <i class="ti-star"></i></h4>
-                <input type="checkbox" name="exterior" value="Factory New">
-                <label for="Factory New">Factory New</label><br>
-                <input type="checkbox" name="exterior" value="Minimal Wear">
-                <label for="MinimalWear">Minimal Wear</label><br>
-                <input type="checkbox" name="exterior" value="Field-Tested">
-                <label for="Field-Tested">Field-Tested</label><br>
-                <input type="checkbox" name="exterior" value="Well-Worn">
-                <label for="Well-Worn">Well-Worn</label><br>
-                <input type="checkbox" name="exterior" value="Battle-Scarred">
-                <label for="Battle-Scarred">Battle-Scarred</label><br>
 
-                <h4 class="filter-subtitle">Float</i></h4>
-                <div class="filter-range">
-                    <div class="range_container">
-                        <div class="sliders_control">
-                            <input id="floatFromSlider" type="range" value="0" min="0" max="1" step="0.00001" />
-                            <input id="floatToSlider" type="range" value="1" min="0" max="1" step="0.00001" />
+                    <h4 class="filter-subtitle">Category</i></h4>
+                    <input type="checkbox" name="quality" value="All">
+                    <label for="All">All</label><br>
+                    <input type="checkbox" name="quality" value="Normal">
+                    <label for="Normal">Normal</label><br>
+                    <input type="checkbox" name="quality" value="StatTrak">
+                    <label for="StatTrak™">StatTrak</label><br>
+                    <input type="checkbox" name="quality" value="Souvenir">
+                    <label for="Souvenir">Souvenir</label><br>
+
+                    <h4 class="filter-subtitle">Rarity</i></h4>
+                    <div class="filter-col">
+                        <div>
+                            <input type="checkbox" name="rarity" value="All">
+                            <label for="All">All</label><br>
+                            <input type="checkbox" name="rarity" value="Consumer Grade">
+                            <label for="ConsumerGrade">Consumer Grade</label><br>
+                            <input type="checkbox" name="rarity" value="Mil-Spec Grade">
+                            <label for="Mil-SpecGrade">Mil-Spec Grade</label><br>
+                            <input type="checkbox" name="rarity" value="Industrial Grade">
+                            <label for="IndustrialGrade">Industrial Grade</label><br>
+                            <input type="checkbox" name="rarity" value="Restricted">
+                            <label for="Restricted">Restricted</label><br>
+                            <input type="checkbox" name="rarity" value="Classified">
+                            <label for="Classified">Classified</label><br>
+                            <input type="checkbox" name="rarity" value="Covert">
+                            <label for="Covert">Covert</label><br>
+                            <input type="checkbox" name="rarity" value="Distinguished">
+                            <label for="Distinguished">Distinguished</label><br>
+                            <input type="checkbox" name="rarity" value="Exceptional">
+                            <label for="Exceptional">Exceptional</label><br>
                         </div>
-                        <div class="form_control">
-                            <div class="form_control_container">
-                                <div class="form_control_container__time">Min</div>
-                                <input class="form_control_container__time__input" type="number" id="floatFromInput"
-                                    value="0" min="0" max="1" />
-                            </div>
-                            <div class="form_control_container">
-                                <div class="form_control_container__time">Max</div>
-                                <input class="form_control_container__time__input" type="number" id="floatToInput"
-                                    value="1" min="0" max="1" />
-                            </div>
+                        <div>
+                            <input type="checkbox" name="rarity" value="Superior"
+                                onchange="javascript:this.form.submit()" />
+                            <label for="Superior">Superior</label><br>
+                            <input type="checkbox" name="rarity" value="Master"
+                                onchange="javascript:this.form.submit()" />
+                            <label for="Master">Master</label><br>
+                            <input type="checkbox" name="rarity" value="Base Grade"
+                                onchange="javascript:this.form.submit()" />
+                            <label for="BaseGrade">Base Grade</label><br>
+                            <input type="checkbox" name="rarity" value="Extraordinary"
+                                onchange="javascript:this.form.submit()" />
+                            <label for="Extraordinary">Extraordinary</label><br>
+                            <input type="checkbox" name="rarity" value="High Grade"
+                                onchange="javascript:this.form.submit()" />
+                            <label for="HighGrade">High Grade</label><br>
+                            <input type="checkbox" name="rarity" value="Remarkable"
+                                onchange="javascript:this.form.submit()" />
+                            <label for="Remarkable">Remarkable</label><br>
+                            <input type="checkbox" name="rarity" value="Exotic"
+                                onchange="javascript:this.form.submit()" />
+                            <label for="Exotic">Exotic</label><br>
+                            <input type="checkbox" name="rarity" value="Contraband"
+                                onchange="javascript:this.form.submit()" />
+                            <label for="Contraband">Contraband</label><br>
                         </div>
                     </div>
-                </div>
 
-                <h4 class="filter-subtitle">Category</i></h4>
-                <input type="checkbox" name="quality" value="All">
-                <label for="All">All</label><br>
-                <input type="checkbox" name="quality" value="Normal">
-                <label for="Normal">Normal</label><br>
-                <input type="checkbox" name="quality" value="StatTrak">
-                <label for="StatTrak™">StatTrak</label><br>
-                <input type="checkbox" name="quality" value="Souvenir">
-                <label for="Souvenir">Souvenir</label><br>
-
-                <h4 class="filter-subtitle">Rarity</i></h4>
-                <div class="filter-col">
-                    <div>
-                        <input type="checkbox" name="rarity" value="All">
-                        <label for="All">All</label><br>
-                        <input type="checkbox" name="rarity" value="Consumer Grade">
-                        <label for="ConsumerGrade">Consumer Grade</label><br>
-                        <input type="checkbox" name="rarity" value="Mil-Spec Grade">
-                        <label for="Mil-SpecGrade">Mil-Spec Grade</label><br>
-                        <input type="checkbox" name="rarity" value="Industrial Grade">
-                        <label for="IndustrialGrade">Industrial Grade</label><br>
-                        <input type="checkbox" name="rarity" value="Restricted">
-                        <label for="Restricted">Restricted</label><br>
-                        <input type="checkbox" name="rarity" value="Classified">
-                        <label for="Classified">Classified</label><br>
-                        <input type="checkbox" name="rarity" value="Covert">
-                        <label for="Covert">Covert</label><br>
-                        <input type="checkbox" name="rarity" value="Distinguished">
-                        <label for="Distinguished">Distinguished</label><br>
-                        <input type="checkbox" name="rarity" value="Exceptional" >
-                        <label for="Exceptional">Exceptional</label><br>
+                    <h4 class="filter-subtitle">Item category</i></h4>
+                    <div class="filter-col">
+                        <div>
+                            <input type="checkbox" name="category" value="All" onchange="javascript:this.form.submit()">
+                            <label for="All">All</label><br>
+                            <input type="checkbox" name="category" value="Knive"
+                                onchange="javascript:this.form.submit()">
+                            <label for="Knives">Knives</label><br>
+                            <input type="checkbox" name="category" value="Glove"
+                                onchange="javascript:this.form.submit()">
+                            <label for="Gloves">Gloves</label><br>
+                            <input type="checkbox" name="category" value="Rifle"
+                                onchange="javascript:this.form.submit()">
+                            <label for="Rifles">Rifles</label><br>
+                            <input type="checkbox" name="category" value="Sniper Rifle"
+                                onchange="javascript:this.form.submit()">
+                            <label for="SniperRifles">Sniper Rifles</label><br>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="category" value="Pistol"
+                                onchange="javascript:this.form.submit()">
+                            <label for="Pistols">Pistols</label><br>
+                            <input type="checkbox" name="category" value="SMG" onchange="javascript:this.form.submit()">
+                            <label for="SMG">SMG</label><br>
+                            <input type="checkbox" name="category" value="Shotgun"
+                                onchange="javascript:this.form.submit()">
+                            <label for="Shotguns">Shotguns</label><br>
+                            <input type="checkbox" name="category" value="Machinegun"
+                                onchange="javascript:this.form.submit()">
+                            <label for="Machineguns">Machine guns</label><br>
+                            <input type="checkbox" name="category" value="Others"
+                                onchange="javascript:this.form.submit()">
+                            <label for="Others">Others</label><br>
+                        </div>
                     </div>
-                    <div>
-                        <input type="checkbox" name="rarity" value="Superior"  onchange="javascript:this.form.submit()"/>
-                        <label for="Superior">Superior</label><br>
-                        <input type="checkbox" name="rarity" value="Master"  onchange="javascript:this.form.submit()"/>
-                        <label for="Master">Master</label><br>
-                        <input type="checkbox" name="rarity" value="Base Grade"  onchange="javascript:this.form.submit()"/>
-                        <label for="BaseGrade">Base Grade</label><br>
-                        <input type="checkbox" name="rarity" value="Extraordinary"  onchange="javascript:this.form.submit()"/>
-                        <label for="Extraordinary">Extraordinary</label><br>
-                        <input type="checkbox" name="rarity" value="High Grade"  onchange="javascript:this.form.submit()"/>
-                        <label for="HighGrade">High Grade</label><br>
-                        <input type="checkbox" name="rarity" value="Remarkable"  onchange="javascript:this.form.submit()"/>
-                        <label for="Remarkable">Remarkable</label><br>
-                        <input type="checkbox" name="rarity" value="Exotic"  onchange="javascript:this.form.submit()"/>
-                        <label for="Exotic">Exotic</label><br>
-                        <input type="checkbox" name="rarity" value="Contraband"  onchange="javascript:this.form.submit()"/>
-                        <label for="Contraband">Contraband</label><br>
-                    </div>
-                </div>
-
-                <h4 class="filter-subtitle">Item category</i></h4>
-                <div class="filter-col">
-                    <div>
-                        <input type="checkbox" name="category" value="All" onchange="javascript:this.form.submit()">
-                        <label for="All">All</label><br>
-                        <input type="checkbox" name="category" value="Knive" onchange="javascript:this.form.submit()">
-                        <label for="Knives">Knives</label><br>
-                        <input type="checkbox" name="category" value="Glove" onchange="javascript:this.form.submit()">
-                        <label for="Gloves">Gloves</label><br>
-                        <input type="checkbox" name="category" value="Rifle" onchange="javascript:this.form.submit()">
-                        <label for="Rifles">Rifles</label><br>
-                        <input type="checkbox" name="category" value="Sniper Rifle" onchange="javascript:this.form.submit()">
-                        <label for="SniperRifles">Sniper Rifles</label><br>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="category" value="Pistol" onchange="javascript:this.form.submit()">
-                        <label for="Pistols">Pistols</label><br>
-                        <input type="checkbox" name="category" value="SMG" onchange="javascript:this.form.submit()">
-                        <label for="SMG">SMG</label><br>
-                        <input type="checkbox" name="category" value="Shotgun" onchange="javascript:this.form.submit()">
-                        <label for="Shotguns">Shotguns</label><br>
-                        <input type="checkbox" name="category" value="Machinegun" onchange="javascript:this.form.submit()" >
-                        <label for="Machineguns">Machine guns</label><br>
-                        <input type="checkbox" name="category" value="Others" onchange="javascript:this.form.submit()" >
-                        <label for="Others" >Others</label><br>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="products-result col-md-9">
-        <h3 class="res-title">E-commerce CSGO: Best marketplace for trading your skins</h3>
-        <div >
-            <div class="search-section">
-                <div class="search-bar">
-                    <i class="ti-search"> </i>
-                    <input type="text" name="search" value="{{match.search}}" placeholder="Search" form="filterForm">
-                </div>
-                <div class="search-filter">
-                    <i class="ti-filter"></i>
-                    <select name="sort" form="filterForm" onchange="javascript:this.form.submit()">
-                        <option value="">Sort by</option>
-                        <option value="priceAsc">Price Up</i></option>
-                        <option value="priceDesc">Price Down</i></option>
-                    </select>
-                </div>
+                </form>
             </div>
         </div>
-        <div class="market-products">
-            {{#each itemSells}}
-            <div class="item-slot card p-2" Name="{{getName}}">
-                <img class="item-img card-img-top img-responsive" src="{{getImg}}" alt="{{getName}}">
-                <div class="card-body">
-                    <div class="item-slot-title">
-                        <h4 class="card-title fw-bold">{{getName}}</h4>
-                        <h4 class="item-price card-title fw-bold">{{getPrice}} $</h4>
+        <div class="products-result col-md-9">
+            <h3 class="res-title">E-commerce CSGO: Best marketplace for trading your skins</h3>
+            <div>
+                <div class="search-section">
+                    <div class="search-bar">
+                        <i class="ti-search"> </i>
+                        <input type="text" name="search" value="{{match.search}}" placeholder="Search"
+                            form="filterForm">
                     </div>
-                    <p class="card-text">
-                    <div class="item-slot-text">
-                        <span>{{getExterior}}</span>
-                        <span>{{getCategory}}</span>
+                    <div class="search-filter">
+                        <i class="ti-filter"></i>
+                        <select name="sort" form="filterForm" onchange="javascript:this.form.submit()">
+                            <option value="">Sort by</option>
+                            <option value="priceAsc">Price Up</i></option>
+                            <option value="priceDesc">Price Down</i></option>
+                        </select>
                     </div>
-                    <div class="item-slot-text">
-                        <span>{{getQuality}}</span>
-                        <span>{{getRarity}}</span>
-                    </div>
-                    </p>
-                    <button class="btn btn-info btn-lg button-41" data-toggle="modal"
+                </div>
+            </div>
+            <div class="market-products">
+                {{#each itemSells}}
+                <div class="item-slot card p-2" Name="{{getName}}">
+                    <img class="item-img card-img-top img-responsive" src="{{getImg}}" alt="{{getName}}">
+                    <div class="card-body">
+                        <div class="item-slot-title">
+                            <h4 class="card-title fw-bold">{{getName}}</h4>
+                            <h4 class="item-price card-title fw-bold">{{getPrice}} $</h4>
+                        </div>
+                        <p class="card-text">
+                        <div class="item-slot-text">
+                            <span>{{getExterior}}</span>
+                            <span>{{getCategory}}</span>
+                        </div>
+                        <div class="item-slot-text">
+                            <span>{{getQuality}}</span>
+                            <span>{{getRarity}}</span>
+                        </div>
+                        </p>
+                        <button class="btn btn-info btn-lg button-41" data-toggle="modal"
                             data-target="#itemModal{{getAssetid}}" role="button" role="button">BUY NOW</button>
+                    </div>
                 </div>
+                {{/each}}
             </div>
-            {{/each}}
         </div>
+            
     </div>
-
-    <div class="overlay">
-
-    </div>
-
-
 </section>
 <section id="item-modal">
     {{#each itemSells}}
@@ -217,7 +232,7 @@
                                 <img class="item-img img-responsive" src="{{getImg}}" alt="">
                             </div>
                             <div class="item-modal-infor col-md-7 ml-auto">
-                                <h1 class="item-name">Butterfly Knife Ganma Doppler</h1>
+                                <h1 class="item-name">{{getName}}</h1>
                                 <div class="price">
                                     <div class="item-price"><i class="ti-money">{{getPrice}}</i></div>
                                     <div class="item-suggested-price">
@@ -266,20 +281,20 @@
 </section>
 
 {{#each itemSells}}
-    <script>
-        $("#buy{{getAssetid}}").submit((e)=>{
-            e.preventDefault();
-            $.ajax({
-                type: 'POST',
-                url:'/market/buy/{{getAssetid}}',
-                success: function(result){
-                    showToast(result);
-                },error: function(result){
-                    showToast(result);
-                }
-            })
+<script>
+    $("#buy{{getAssetid}}").submit((e) => {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/market/buy/{{getAssetid}}',
+            success: function (result) {
+                showToast(result);
+            }, error: function (result) {
+                showToast(result);
+            }
         })
-    </script>
+    })
+</script>
 {{/each}}
 
 <script src="/js/market.js"></script>
@@ -288,23 +303,30 @@
 </script>
 
 {{#if match}}
-    <script>
-        {{#each match.rarity}}
-            $(`input[name='rarity'][value='{{this}}']`).attr('checked',true)
-        {{/each}}
-         {{#each match.quality}}
-            $(`input[name='quality'][value='{{this}}']`).attr('checked',true)
-        {{/each}}
-          {{#each match.category}}
-            $(`input[name='category'][value='{{this}}']`).attr('checked',true)
-        {{/each}}
-        {{#each match.exterior}}
-            $(`input[name='exterior'][value='{{this}}']`).attr('checked',true)
-        {{/each}}
-        $(`option[value='{{match.sort}}']`).attr('selected','selected')
-        $(`input[name='minPrice']`).val({{match.minPrice}});
-        $(`input[name='maxPrice']`).val({{match.maxPrice}});
+<script>
+    { { #each match.rarity } }
+    $(`input[name='rarity'][value='{{this}}']`).attr('checked', true)
+    {
+        {
+            /each}}
+            { { #each match.quality } }
+            $(`input[name='quality'][value='{{this}}']`).attr('checked', true)
+            {
+                {
+                    /each}}
+                    { { #each match.category } }
+                    $(`input[name='category'][value='{{this}}']`).attr('checked', true)
+                    {
+                        {
+                            /each}}
+                            { { #each match.exterior } }
+                            $(`input[name='exterior'][value='{{this}}']`).attr('checked', true)
+                            {
+                                {
+                                    /each}}
+                                    $(`option[value='{{match.sort}}']`).attr('selected', 'selected')
+                                    $(`input[name='minPrice']`).val({{ match.minPrice }});
+                                $(`input[name='maxPrice']`).val({{ match.maxPrice }});
 
-    </script>
+</script>
 {{/if}}
-

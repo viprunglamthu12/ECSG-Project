@@ -4,14 +4,19 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #161b25 !important;
-}
-
 html {
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    box-sizing: border-box;
 }
 
+body {
+    background-color: #161b25 !important;
+    box-sizing: inherit;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 20rem;
+}
 
 #nav {
     position: fixed;
@@ -337,7 +342,11 @@ html {
 
 #footer {
     background-color: #28292b;
-
+    position: absolute;
+    clear: both;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 .ft-content {
@@ -377,6 +386,10 @@ html {
     padding-top: 75px;
     color: white;
     line-height: 1.4;
+}
+
+.market-container{
+    height: 1300px;
 }
 
 
@@ -1044,6 +1057,12 @@ input[type="submit"]{
 
 
 /* ------------------- Responsive ------------------ */
+@media screen and (max-width: 992px){
+    body{
+        padding-bottom: 50rem;
+    }
+}
+
 @media screen and (max-width: 1140px) {
     .filter-col {
         display: block;
@@ -1121,6 +1140,13 @@ input[type="submit"]{
     .main-regis-place{
         width: 100%;
         text-align: justify;
+    }
+
+    #pending-modal .modal-footer{
+        display: block;
+    }
+    #pending-modal .modal-footer .confirm-btn{
+        width: 100%;
     }
 }
 
