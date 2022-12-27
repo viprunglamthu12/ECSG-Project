@@ -191,11 +191,11 @@
     })
 
     $("#yourPrice{{assetid}}").change(()=>{
-        $("#youReceive{{assetid}}").val($("#yourPrice{{assetid}}").val()*0.98)
+        $("#youReceive{{assetid}}").val(($("#yourPrice{{assetid}}").val()*0.98).toFixed(2))
     })
 
     $("#youReceive{{assetid}}").change(()=>{
-        $("#yourPrice{{assetid}}").val($("#youReceive{{assetid}}").val()*1.02)
+        $("#yourPrice{{assetid}}").val(Number(Math.round($("#youReceive{{assetid}}").val()*1.02+'e2')+'e-2'))
     })
 
 
