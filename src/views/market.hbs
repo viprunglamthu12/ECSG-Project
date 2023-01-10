@@ -23,7 +23,7 @@
                                     <div class="form_control_container">
                                         <div class="form_control_container__time">Min</div>
                                         <input class="form_control_container__time__input" type="number"
-                                            id="priceFromInput" value="0" min="0" max="21999" name="minPrice" />
+                                            id="priceFromInput"  value="0" min="0" max="21999" name="minPrice" />
                                     </div>
                                     <div class="form_control_container">
                                         <div class="form_control_container__time">Max</div>
@@ -303,30 +303,21 @@
 </script>
 
 {{#if match}}
-<script>
-    { { #each match.rarity } }
-    $(`input[name='rarity'][value='{{this}}']`).attr('checked', true)
-    {
-        {
-            /each}}
-            { { #each match.quality } }
-            $(`input[name='quality'][value='{{this}}']`).attr('checked', true)
-            {
-                {
-                    /each}}
-                    { { #each match.category } }
-                    $(`input[name='category'][value='{{this}}']`).attr('checked', true)
-                    {
-                        {
-                            /each}}
-                            { { #each match.exterior } }
-                            $(`input[name='exterior'][value='{{this}}']`).attr('checked', true)
-                            {
-                                {
-                                    /each}}
-                                    $(`option[value='{{match.sort}}']`).attr('selected', 'selected')
-                                    $(`input[name='minPrice']`).val({{ match.minPrice }});
-                                $(`input[name='maxPrice']`).val({{ match.maxPrice }});
-
-</script>
+    <script>
+        {{#each match.rarity}}
+            $(`input[name='rarity'][value='{{this}}']`).attr('checked',true)
+        {{/each}}
+         {{#each match.quality}}
+            $(`input[name='quality'][value='{{this}}']`).attr('checked',true)
+        {{/each}}
+          {{#each match.category}}
+            $(`input[name='category'][value='{{this}}']`).attr('checked',true)
+        {{/each}}
+        {{#each match.exterior}}
+            $(`input[name='exterior'][value='{{this}}']`).attr('checked',true)
+        {{/each}}
+        $(`option[value='{{match.sort}}']`).attr('selected','selected')
+        $(`input[name='minPrice']`).val({{match.minPrice}});
+        $(`input[name='maxPrice']`).val({{match.maxPrice}});
+    </script>
 {{/if}}
